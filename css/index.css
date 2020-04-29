@@ -1,0 +1,32 @@
+@charset "utf-8";
+
+/*********************
+        FONTS
+********************/
+@font-face {
+  font-family: segoeui;
+  src: url(../fonts/segoeui.ttf);
+}
+
+/*********************
+        MAIN
+********************/
+#videoContainer{
+    margin-top: 2.08vh;
+    height: 44.8vw;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-image: url("../assets/tempVideoPlacementImg.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    color: #E0E0E0;
+}
+
+#title{
+    font-size: 5.73vw;
+}
+
+#subTitle{
+    font-size: 1.56vw;
+}

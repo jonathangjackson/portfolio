@@ -13,6 +13,13 @@
 ********************/
 *{
     margin: 0px;
+    font-family: segoeui;
+}
+
+#wrapper{
+    flex-direction: column;
+    width: 100%;
+    height: auto;
     
 }
 
@@ -24,16 +31,16 @@ section{
 }
 
 #head{
+    margin-top: 1.04vw;
     margin-left: 1.04vw;
     margin-right: 1.04vw;
-    height: 8vh;
-    width: 100%;
+    
+    flex-direction: row;
     justify-content:space-between;
     align-items: center;
-    flex-direction: row;
-    font-family: segoeui;
-    color: #C0C0C0;
     font-size: 1.04vw;/*20px/1920 * 100 = 1.04*/
+    
+    color: #C0C0C0;
 }
 
 body {
@@ -45,3 +52,7 @@ a{
   color: #C0C0C0;
   cursor: pointer;
 }
+
+/*********************
+     MEDIA QUERIES
+********************/
