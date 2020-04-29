@@ -1,0 +1,17 @@
+@font-face {
+  font-family: segoeui;
+  src: url(../fonts/segoeui.ttf);
+}
+
+*{
+    all: none;
+}
+
+#head{
+    font-family: segoeui;
+    color: #C0C0C0;
+}
+
+body {
+    background-color:#171717;
+}
