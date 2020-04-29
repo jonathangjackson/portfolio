@@ -1,18 +1,47 @@
+@charset "utf-8";
+
+/*********************
+        FONTS
+********************/
 @font-face {
   font-family: segoeui;
   src: url(../fonts/segoeui.ttf);
 }
 
+/*********************
+        MAIN
+********************/
 *{
-    all: none;
+    margin: 0px;
+    
+}
+
+section{
+  /*Makes the section a container for flex box*/
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 #head{
+    margin-left: 1.04vw;
+    margin-right: 1.04vw;
+    height: 8vh;
+    width: 100%;
+    justify-content:space-between;
+    align-items: center;
+    flex-direction: row;
     font-family: segoeui;
     color: #C0C0C0;
-    font-size: 20px;
+    font-size: 1.04vw;/*20px/1920 * 100 = 1.04*/
 }
 
 body {
     background-color:#171717;
+}
+
+a{
+  text-decoration: none;
+  color: #C0C0C0;
+  cursor: pointer;
 }
