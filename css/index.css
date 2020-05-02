@@ -18,8 +18,6 @@
         MAIN
 ********************/
 #videoContainer{
-    
-    scroll-snap-align: start;
     flex: 1 1 auto;
     justify-content: center;
     align-items: center;
@@ -51,9 +49,11 @@
     font-size: 1.56vw;
     
 }
-
+/*********************
+        FILTERS
+********************/
 #filters{
-    scroll-snap-align: start;
+    transition: all 0.5s ease;
     justify-content: center;
     align-items: center;
     flex-direction: row;
@@ -62,14 +62,24 @@
     font-size: 1.46vw;
 }
 
+.tag:hover{
+    cursor:pointer;
+}
+
+/*********************
+        PROJECTS
+********************/
+
 #projects{
+    transition: all 0.5s ease;
     margin-top: 1.04vw;
     width: 64.63vw;
     margin: 0 auto;
-    margin-top: 2.08vw;
+    margin-top: 1.04vw;
     justify-content: space-around;
     flex-direction: column;
     align-items: center;
+    opacity: 1;
 }
 
 .projectImg{
@@ -78,21 +88,12 @@
     object-fit: cover;
 }
 
-
-.tag:hover{
-    cursor:pointer;
-}
-
-.column3D{
-    
-}
-
 .row{
-    justify-content: space-around;
+    justify-content: space-between;
     flex-direction: row;
     align-items: center;
     width: 100%;
-    margin-bottom: 1.04vw;
+    margin-bottom: 2.6vw;
 }
 
 .content{
@@ -107,6 +108,7 @@
 }
 
 .overlay{
+    transition: all 0.5s ease;
     position: absolute;
     text-align: center;
     text-justify: auto;
@@ -133,4 +135,93 @@
 .tag{
     padding-left: 1.56vw;
     padding-right: 1.56vw;
+}
+
+/*********************
+    DESCRIPTIONS
+********************/
+#descriptions{
+    margin-top: 1.04vw;
+    width: 64.63vw;
+    margin: 0 auto;
+    flex-direction: row;
+    position: relative;
+}
+
+.gallery{
+    width: 0vw;
+    transition: all 1.0s ease;
+    flex-direction: row;
+    padding-right: 4.69vw;
+}
+
+.projectHeader{
+    
+    color: #E9E5E5;
+    font-family: seguibl;
+    font-size: 2.08vw;
+    justify-content: space-between;
+    padding-bottom: 1.02vw;
+    align-content: center;
+    flex-direction: row;
+    align-items: center;
+    transition: all 1.0s ease;
+}
+
+#imgClose{
+    width: 1.24vw;
+    height: 1.24vw;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.projTitle{
+    
+}
+
+.projectBody{
+    
+    font-size: 0.94vw;
+    color: #E9E5E5;
+    transition: all 1.0s ease;
+}
+
+.projDescription{
+    position: absolute;
+    transition: all 1.0s ease;
+    width: 64.63vw;
+    flex-direction: column;
+    opacity: 0;
+    z-index: -1;
+}
+
+.projectHeader{
+    transition: all 1.0s ease;
+}
+
+.projectImg{
+    position: relative;
+    width: 12.63vw;
+    height: 12.63vw;
+}
+
+.information{
+    flex-direction: column;
+    transition: all 1.0s ease;
+}
+
+.summary{
+    padding-bottom: 1.02vw;
+    transition: all 1.0s ease;
+}
+
+.program{
+    flex-direction: row;
+    align-items: center;
+}
+
+.appIcon{
+    width: 2.04vw;
+    padding-top: 0.35vw;
+    padding-right: 1.02vw;
 }

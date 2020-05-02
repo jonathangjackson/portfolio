@@ -1,8 +1,8 @@
 
 var fontSize = parseFloat($('#titleText').css('font-size'));
 var minSize = fontSize - (0.0104 * window.innerWidth);
-
 var repeater;
+var openProject = "null";
 
 function resize(){
     fontSize = parseFloat($('#titleText').css('font-size'));
@@ -36,22 +36,60 @@ function move(){
 let filters = [[false, "f78b4d"], [false, "f7e94d"], [false, "5ef74d"], [false, "4df7ca"], [false, "4d75f7"], [false, "f74df7"]];
 
 function tag(ele){
-    var pos = parseInt(ele.id);
-    if(!filters[pos][0]){
-        ele.style.color = "#" + filters[pos][1];
-        ele.style.fontWeight = 900;
-        filterProjects(pos);
+    
+    if(openProject != "null"){
+        closeProject();
     }
     else{
-        ele.style.color = "#E0E0E0";
-        ele.style.fontWeight = 1;
+        $("#filters").css("font-size", 1.46 + "vw");
+        $(".tag").css("opacity", "1");
+        var pos = parseInt(ele.id);
+        if(!filters[pos][0]){
+            ele.style.color = "#" + filters[pos][1];
+            ele.style.fontWeight = 900;
+            filterProjects(pos);
+        }
+        else{
+            ele.style.color = "#E0E0E0";
+            ele.style.fontWeight = 1;
+        }
+        filters[pos][0] = !filters[pos][0];
     }
-    filters[pos][0] = !filters[pos][0];
 }
 
 
 function filterProjects(){
     
+}
+
+function loadProject(event, ele){
+    $("#filters").css("font-size", 0.73 + "vw");
+    $(".tag").css("opacity", "0.31");
+    openProject = ele.id;
+    $("#" + ele.id + "Description").css("opacity", "1");
+    $("#" + ele.id + "Description").css("visibility", "visible");
+    $(".gallery").css("flex-direction", "column");
+    $(".gallery").css("width", "45vw");
+    $(".projDescription").css("z-index", 2);
+    $("#projects").css("opacity", "0");
+    $("#projects").css("visibility", "hidden");    
+}
+
+function closeProject(){
+    $("#filters").css("font-size", 1.46 + "vw");
+    $(".tag").css("opacity", "1");
+    $("#" + openProject + "Description").css("opacity", "0");
+    $("#" + openProject + "Description").css("visibility", "hidden");
+    $(".gallery").css("flex-direction", "row");
+    $(".gallery").css("width", "0vw");
+    $(".projDescription").css("z-index", -1);
+    $("#projects").css("opacity", "1");
+    $("#projects").css("visibility", "visible");   
+    openProject = "null";
+}
+
+function setSize(){
+    $("#descriptions").css("top", "-" + $("#projects").css("height"));
 }
 
 function parallaxOn(event, ele){

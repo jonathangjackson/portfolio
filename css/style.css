@@ -44,16 +44,13 @@ a{
     flex-direction: column;
     width: 100%;
     height: auto;
-    scroll-snap-type: y mandatory;
 }
 
 #head{
-    
-    scroll-snap-align: start;
     position: -webkit-sticky; /* Safari */
     position: sticky;
     top: 1.04vw;
-    
+    /*z-index: -1;*/
     margin-top: 1.04vw;
     margin-left: 1.04vw;
     margin-right: 1.04vw;

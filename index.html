@@ -8,7 +8,7 @@
         <script src="js/index.js"></script>
         <title>Jonathan Jackson | Portfolio</title>
     </head>
-    <body onscroll="move()" onresize="resize()">
+    <body onscroll="move()" onresize="resize()" onload="setSize()">
         <section id="wrapper">
             <section id="head">
                 <div id="name">Jonathan Jackson <b>| Portfolio</b></div>
@@ -35,32 +35,32 @@
                     <div class="column3D">
                         <div class="content" onmousemove="parallaxOn(event, this)" onmouseout="parallaxOff(event, this)">
                             <img class="projectImg" src="assets/jonathanJ_S01_A02%20(1).png" >
-                            <div class="overlay">
+                            <div id="Woody" class="overlay" onmousedown="loadProject(event, this)">
                                 WOODY
                             </div>
                         </div>
                     </div>
                     <div class="column3D">
                         <div class="content" onmousemove="parallaxOn(event, this)" onmouseout="parallaxOff(event, this)">
-                            <img class="projectImg" src="assets/jonathanJ_S01_A02%20(1).png" >
-                            <div class="overlay">
-                                WOODY
+                            <img class="projectImg" src="assets/IMD3002_A03_J.Jackson_Image.png" >
+                            <div id="Lego" class="overlay" onmousedown="loadProject(event, this)">
+                                LEGO GENERATION
                             </div>
                         </div>
                     </div>
                     <div class="column3D">
                         <div class="content" onmousemove="parallaxOn(event, this)" onmouseout="parallaxOff(event, this)">
                             <img class="projectImg" src="assets/tempVideoPlacementImg.png" >
-                            <div class="overlay">
+                            <div id="Station" class="overlay" onmousedown="loadProject(event, this)">
                                 STATION SIX
                             </div>
                         </div>
                     </div>
                     <div class="column3D">
                         <div class="content" onmousemove="parallaxOn(event, this)" onmouseout="parallaxOff(event, this)">
-                            <img class="projectImg" src="assets/jonathanJ_S01_A02%20(1).png" >
+                            <img class="projectImg" src="assets/Meetings.png" >
                             <div class="overlay">
-                                WOODY
+                                MEETING CREATOR
                             </div>
                         </div>
                     </div>
@@ -99,6 +99,66 @@
                         </div>
                     </div>
                 </section> 
+            </section>
+            <section id="descriptions">
+                <section class="projDescription" id="LegoDescription">
+                    <section class="projectHeader">
+                        <div class="projTitle">LEGO</div>
+                        <img id="imgClose" src="assets/close.png" onmousedown="closeProject()">
+                    </section>
+                    <section class="projectBody">
+                        <section class="gallery">
+                            <section class="row">
+                                <img class="projectImg" src="assets/jonathanJ_S01_A02%20(1).png" >
+                                <img class="projectImg" src="assets/jonathanJ_S01_A02%20(1).png" >
+                            </section>
+                            <section class="row">
+                                <img class="projectImg" src="assets/jonathanJ_S01_A02%20(1).png" >
+                                <img class="projectImg" src="assets/jonathanJ_S01_A02%20(1).png" >
+                            </section>
+                        </section>
+                        <section class="information">
+                            <div class="summary">
+                                <b>Different Words</b>
+                            </div>
+                            <div class="apps">
+                                <section class="program">
+                                    <img class="appIcon" src="assets/mayaIcon.svg">
+                                    <div class="appDescription"><b>Maya</b> | 3D Modelling, Texturing, UV Unwrapping, Rendering</div>
+                                </section>
+                            </div>
+                        </section>
+                    </section>                    
+                </section>
+                <section class="projDescription" id="WoodyDescription">
+                    <section class="projectHeader">
+                        <div class="projTitle">WOODY</div>
+                        <img id="imgClose" src="assets/close.png" onmousedown="closeProject()">
+                    </section>
+                    <section class="projectBody">
+                        <section class="gallery">
+                            <section class="row">
+                                <img class="projectImg" src="assets/jonathanJ_S01_A02%20(1).png" >
+                                <img class="projectImg" src="assets/jonathanJ_S01_A02%20(1).png" >
+                            </section>
+                            <section class="row">
+                                <img class="projectImg" src="assets/jonathanJ_S01_A02%20(1).png" >
+                                <img class="projectImg" src="assets/jonathanJ_S01_A02%20(1).png" >
+                            </section>
+                        </section>
+                        <section class="information">
+                            <div class="summary">
+                                <b>This was a project that foucesd on the process of building a character using Maya, Substance and Photoshop</b>
+                            </div>
+                            <div class="apps">
+                                <section class="program">
+                                    <img class="appIcon" src="assets/mayaIcon.svg">
+                                    <div class="appDescription"><b>Maya</b> | 3D Modelling, Texturing, UV Unwrapping, Rendering</div>
+                                </section>
+                            </div>
+                        </section>
+                    </section>                    
+                </section>
             </section>
         </section>
     </body>
