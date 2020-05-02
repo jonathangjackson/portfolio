@@ -49,6 +49,7 @@
 
 #subTitle{
     font-size: 1.56vw;
+    
 }
 
 #filters{
@@ -72,10 +73,11 @@
 }
 
 .projectImg{
-    width:100%;
+    width: 100%;
     height: 100%;
     object-fit: cover;
 }
+
 
 .tag:hover{
     cursor:pointer;
