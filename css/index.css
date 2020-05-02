@@ -71,7 +71,7 @@
 ********************/
 
 #projects{
-    transition: all 0.5s ease;
+    transition: all 1.0s ease;
     margin-top: 1.04vw;
     width: 64.63vw;
     margin: 0 auto;
@@ -151,7 +151,7 @@
 .gallery{
     width: 0vw;
     transition: all 1.0s ease;
-    flex-direction: row;
+    flex-direction: column;
     padding-right: 4.69vw;
 }
 

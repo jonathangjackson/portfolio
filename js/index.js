@@ -68,7 +68,6 @@ function loadProject(event, ele){
     openProject = ele.id;
     $("#" + ele.id + "Description").css("opacity", "1");
     $("#" + ele.id + "Description").css("visibility", "visible");
-    $(".gallery").css("flex-direction", "column");
     $(".gallery").css("width", "45vw");
     $(".projDescription").css("z-index", 2);
     $("#projects").css("opacity", "0");
@@ -80,7 +79,6 @@ function closeProject(){
     $(".tag").css("opacity", "1");
     $("#" + openProject + "Description").css("opacity", "0");
     $("#" + openProject + "Description").css("visibility", "hidden");
-    $(".gallery").css("flex-direction", "row");
     $(".gallery").css("width", "0vw");
     $(".projDescription").css("z-index", -1);
     $("#projects").css("opacity", "1");
