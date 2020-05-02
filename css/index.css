@@ -66,15 +66,26 @@
     width: 64.63vw;
     margin: 0 auto;
     margin-top: 2.08vw;
-    justify-content: center;
-    
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
 }
 
 .tag:hover{
     cursor:pointer;
 }
 
+.column3D{
+    
+}
 
+.row{
+    justify-content: space-around;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 1.04vw;
+}
 
 .content{
     transition: all .2s ease-in-out;
@@ -106,10 +117,6 @@
 .content:hover .projectImg{
     transform: scale(1.05); 
     filter: blur(1px);
-}
-
-.row{
-    
 }
 
 .tag{
