@@ -13,14 +13,17 @@
 ********************/
 *{
     margin: 0px;
+}
+
+body {
+    background-color:#171717;
     font-family: segoeui;
 }
 
-#wrapper{
-    flex-direction: column;
-    width: 100%;
+img {
+    max-width: 100%;
     height: auto;
-    
+    border-radius: 4%;
 }
 
 section{
@@ -30,7 +33,26 @@ section{
   display: flex;
 }
 
+a{
+  text-decoration: none;
+  color: #C0C0C0;
+  cursor: pointer;
+}
+
+#wrapper{
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    scroll-snap-type: y mandatory;
+}
+
 #head{
+    
+    scroll-snap-align: start;
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 1.04vw;
+    
     margin-top: 1.04vw;
     margin-left: 1.04vw;
     margin-right: 1.04vw;
@@ -39,20 +61,8 @@ section{
     justify-content:space-between;
     align-items: center;
     font-size: 1.04vw;/*20px/1920 * 100 = 1.04*/
-    
     color: #C0C0C0;
 }
-
-body {
-    background-color:#171717;
-}
-
-a{
-  text-decoration: none;
-  color: #C0C0C0;
-  cursor: pointer;
-}
-
 /*********************
      MEDIA QUERIES
 ********************/

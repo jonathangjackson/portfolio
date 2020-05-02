@@ -5,9 +5,10 @@
         <script src="js/jquery-3.5.0.min.js"></script>
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="css/index.css">
+        <script src="js/index.js"></script>
         <title>Jonathan Jackson | Portfolio</title>
     </head>
-    <body>
+    <body onscroll="move()" onresize="resize()">
         <section id="wrapper">
             <section id="head">
                 <div id="name">Jonathan Jackson <b>| Portfolio</b></div>
@@ -15,10 +16,30 @@
             </section>
             <section id="videoContainer">
                 <div id="title">
-                    <b>Interactive Media Designer</b>
+                    <b id="titleText">Interactive Media Designer</b>
                 </div>
                 <div id="subTitle">
                     BIT in Interactive Multimedia and Design
+                </div>
+            </section>
+            <section id="filters">
+                <div class="tag" id="0" onclick="tag(this)">3D Modelling</div>
+                <div class="tag" id="1" onclick="tag(this)">UX/UI Design</div>
+                <div class="tag" id="2" onclick="tag(this)">Photography</div> 
+                <div class="tag" id="3" onclick="tag(this)">Virtual Reality</div>
+                <div class="tag" id="4" onclick="tag(this)">Games</div>
+                <div class="tag" id="5" onclick="tag(this)">Web Design</div>
+            </section>
+            <section id="projects">
+                <div class="row">
+                    <div class="column 3D">
+                        <div class="content" onmousemove="parallaxOn(event, this)" onmouseout="parallaxOff(event, this)">
+                            <img class="projectImg" src="assets/jonathanJ_S01_A02%20(1).png" >
+                            <div class="overlay">
+                                WOODY
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </section>
         </section>
