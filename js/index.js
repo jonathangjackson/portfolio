@@ -47,19 +47,45 @@ function tag(ele){
         if(!filters[pos][0]){
             ele.style.color = "#" + filters[pos][1];
             ele.style.fontWeight = 900;
-            filterProjects(pos);
+            
         }
         else{
             ele.style.color = "#E0E0E0";
             ele.style.fontWeight = 1;
         }
         filters[pos][0] = !filters[pos][0];
+        var filterOn = false;
+        for(var i = 0; i < 6; i++){
+            if(filters[i][0]){
+                filterOn = true;
+                var elements = $("." + i);
+                elements.css("opacity", "1");
+                elements.css("border-bottom", "0.5vw solid");
+                elements.css("border-top", "0.5vw solid");
+                elements.css("border-radius", "10%");
+                elements.css("border-color", "#" + filters[i][1]);
+            }
+            else{
+                var elements = $("." + i);
+                elements.css("opacity", "0.5");
+                elements.css("border-bottom", "0.0vw");
+                elements.css("border-top", "0.0vw");
+            }
+        }
+        
+        if(!filterOn){
+            for(var i = 0; i < 6; i++){
+                var elements = $("." + i);
+                elements.css("opacity", "1");
+                elements.css("border-bottom", "0.0vw");
+                elements.css("border-top", "0.0vw");
+            }
+        }
     }
 }
 
 
-function filterProjects(){
-    
+function filterProjects(i){
 }
 
 function loadProject(event, ele){
