@@ -188,6 +188,7 @@
 
 .projDescription{
     position: absolute;
+    top: -60.9vw;
     transition: all 1.0s ease;
     width: 64.63vw;
     flex-direction: column;

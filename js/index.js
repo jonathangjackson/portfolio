@@ -113,7 +113,7 @@ function closeProject(){
 }
 
 function setSize(){
-    $("#descriptions").css("top", "-" + $("#projects").css("height"));
+    //$("#descriptions").css("top", "-" + $("#videoContainer").css("height"));
 }
 
 function parallaxOn(event, ele){
