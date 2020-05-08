@@ -67,7 +67,7 @@ function tag(ele){
             }
             else{
                 var elements = $("." + i);
-                elements.css("opacity", "0.5");
+                elements.css("opacity", "0.25");
                 elements.css("border-bottom", "0.0vw");
                 elements.css("border-top", "0.0vw");
             }
