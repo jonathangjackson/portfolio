@@ -35,9 +35,9 @@ section{
 }
 
 a{
-  text-decoration: none;
-  color: #C0C0C0;
-  cursor: pointer;
+    text-decoration: none;
+    color: #C0C0C0;
+    cursor: pointer;
 }
 
 #wrapper{

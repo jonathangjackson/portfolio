@@ -60,16 +60,14 @@ function tag(ele){
                 filterOn = true;
                 var elements = $("." + i);
                 elements.css("opacity", "1");
-                elements.css("border-bottom", "0.5vw solid");
-                elements.css("border-top", "0.5vw solid");
-                elements.css("border-radius", "10%");
+                elements.css("border-left", "0.5vw solid");
+                elements.css("border-radius", "15%");
                 elements.css("border-color", "#" + filters[i][1]);
             }
             else{
                 var elements = $("." + i);
                 elements.css("opacity", "0.25");
-                elements.css("border-bottom", "0.0vw");
-                elements.css("border-top", "0.0vw");
+                elements.css("border-left", "0.0vw");
             }
         }
         
@@ -77,8 +75,7 @@ function tag(ele){
             for(var i = 0; i < 6; i++){
                 var elements = $("." + i);
                 elements.css("opacity", "1");
-                elements.css("border-bottom", "0.0vw");
-                elements.css("border-top", "0.0vw");
+                elements.css("border-left", "0.0vw");
             }
         }
     }
@@ -92,10 +89,11 @@ function loadProject(event, ele){
     $("#filters").css("font-size", 0.73 + "vw");
     $(".tag").css("opacity", "0.31");
     openProject = ele.id;
+    $("#" + ele.id + "Description").css("z-index", "2");
     $("#" + ele.id + "Description").css("opacity", "1");
     $("#" + ele.id + "Description").css("visibility", "visible");
     $(".gallery").css("width", "45vw");
-    $(".projDescription").css("z-index", 2);
+    //$(".projDescription").css("z-index", 2);
     $("#projects").css("opacity", "0");
     $("#projects").css("visibility", "hidden");    
 }
@@ -104,9 +102,10 @@ function closeProject(){
     $("#filters").css("font-size", 1.46 + "vw");
     $(".tag").css("opacity", "1");
     $("#" + openProject + "Description").css("opacity", "0");
+    $("#" + openProject + "Description").css("z-index", "-1");
     $("#" + openProject + "Description").css("visibility", "hidden");
     $(".gallery").css("width", "0vw");
-    $(".projDescription").css("z-index", -1);
+    //$(".projDescription").css("z-index", -1);
     $("#projects").css("opacity", "1");
     $("#projects").css("visibility", "visible");   
     openProject = "null";

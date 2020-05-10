@@ -152,7 +152,7 @@
     width: 0vw;
     transition: all 1.0s ease;
     flex-direction: column;
-    padding-right: 4.69vw;
+    margin-right: 4.69vw;
 }
 
 .projectHeader{
@@ -188,7 +188,7 @@
 
 .projDescription{
     position: absolute;
-    top: -60.9vw;
+    top: -48.5vw;
     transition: all 1.0s ease;
     width: 64.63vw;
     flex-direction: column;
@@ -209,10 +209,12 @@
 .information{
     flex-direction: column;
     transition: all 1.0s ease;
+    width: 50.56vw;
+    align-items: flex-start;
 }
 
 .summary{
-    padding-bottom: 1.02vw;
+    margin-bottom: 1.02vw;
     transition: all 1.0s ease;
 }
 
@@ -225,4 +227,5 @@
     width: 2.04vw;
     padding-top: 0.35vw;
     padding-right: 1.02vw;
+    border-radius: 4%;
 }
