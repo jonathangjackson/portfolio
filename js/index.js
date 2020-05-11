@@ -151,3 +151,23 @@ function parallaxOff(event, ele){
     ele.children[1].style.top = "50%";
     ele.children[1].style.left = "50%";
 }
+
+function loadImage(ele){
+    $("#imageExpand").css("opacity", "1");
+    $("#imageExpand").css("display", "flex");
+    $("#imageExpand").css("z-index", "3");
+    var source = ele.src;
+    source = source.substr(source.search("/SmallScale") + 12, source.length);
+    //$("#imageExpand").css("background-image", "url(assets/Photos/FullScale/" + source + ")");
+    document.getElementById("imageExpand").style.backgroundImage = "url(assets/Photos/FullScale/" + source + ")";
+    //$("#imgExpanded").css("style", "assets/Photos/FullScale/Conversation.jpg");
+    //document.getElementById("imgExpanded").src = "assets/Photos/FullScale/" + source;
+}
+
+function closeImage(){
+    $("#imageExpand").css("opacity", "0");
+    $("#imageExpand").css("display", "none");
+    $("#imageExpand").css("z-index", "0");
+    //$("#imgExpanded").css("style", "assets/Photos/FullScale/Conversation.jpg");
+    document.getElementById("imgExpanded").src = "";
+}
