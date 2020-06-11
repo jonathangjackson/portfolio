@@ -1,176 +1,47 @@
-
-var fontSize = parseFloat($('#titleText').css('font-size'));
-var minSize = fontSize - (0.0104 * window.innerWidth);
-var repeater;
-var openProject = "null";
-
-function resize(){
-    fontSize = parseFloat($('#titleText').css('font-size'));
-    //reset it 
-    minSize = fontSize - (0.0104 * window.innerWidth);
+function sendProject(e){
+    var ele = e.parentNode.parentElement;
+    openProjects(ele);
 }
 
-function move(){
-    //scroll-snap-type: y mandatory;
-    var rect = document.getElementById('videoContainer').getBoundingClientRect(); 
-    
-    if(rect.y < 0 && Math.abs(rect.y) < rect.height / 2.0){
-        var val = rect.height/2.0;
-        val = Math.abs(rect.y) / val;
-        $("#subTitle").css("opacity", 1.0 - val);
-        val = fontSize - (minSize * (val));
-        val = val / window.innerWidth * 100;
-        $('#titleText').css("font-size" , val + "vw");
-        //$('#title').css("height", val + "vw");
-    }
-    if(rect.y < -rect.height){
-        //position: -webkit-sticky; /* Safari */
-        //position: sticky;
-        //top: 1.04vw;
-    }
-    else{
+function openProjects(e){
+    if(getComputedStyle(e.childNodes[5]).opacity === "0"){
+        e.childNodes[1].childNodes[1].childNodes[1].style.fontFamily = "montReg";
+        var projText = e.childNodes[1].childNodes[1].childNodes[3].innerHTML;
+        projText = "-" + projText.substr(1,projText.length);
+        e.childNodes[1].childNodes[1].childNodes[3].innerHTML = projText;
+        console.log(e.childNodes[1].childNodes[3].childNodes);
         
-    }
-}
-
-let filters = [[false, "f78b4d"], [false, "f7e94d"], [false, "5ef74d"], [false, "4df7ca"], [false, "4d75f7"], [false, "f74df7"]];
-
-function tag(ele){
-    
-    if(openProject != "null"){
-        closeProject();
-    }
-    else{
-        $("#filters").css("font-size", 1.46 + "vw");
-        $(".tag").css("opacity", "1");
-        var pos = parseInt(ele.id);
-        if(!filters[pos][0]){
-            ele.style.color = "#" + filters[pos][1];
-            ele.style.fontWeight = 900;
-            
-        }
-        else{
-            ele.style.color = "#E0E0E0";
-            ele.style.fontWeight = 1;
-        }
-        filters[pos][0] = !filters[pos][0];
-        var filterOn = false;
-        for(var i = 0; i < 6; i++){
-            if(filters[i][0]){
-                filterOn = true;
-                var elements = $("." + i);
-                elements.css("opacity", "1");
-                elements.css("border-left", "0.5vw solid");
-                elements.css("border-radius", "15%");
-                elements.css("border-color", "#" + filters[i][1]);
-            }
-            else{
-                var elements = $("." + i);
-                elements.css("opacity", "0.25");
-                elements.css("border-left", "0.0vw");
-            }
-        }
+        e.childNodes[1].childNodes[1].childNodes[1].style.fontSize = "2.19vw";
+        e.childNodes[1].childNodes[1].childNodes[3].style.fontSize = "0.625vw";
         
-        if(!filterOn){
-            for(var i = 0; i < 6; i++){
-                var elements = $("." + i);
-                elements.css("opacity", "1");
-                elements.css("border-left", "0.0vw");
-            }
+        all = e.childNodes[1].childNodes[3].childNodes;
+        for(var i = 1; i < all.length; i += 2){
+            all[i].style.width = "2.625vw";
         }
-    }
-}
-
-
-function filterProjects(i){
-}
-
-function loadProject(event, ele){
-    $("#filters").css("font-size", 0.73 + "vw");
-    $(".tag").css("opacity", "0.31");
-    openProject = ele.id;
-    $("#" + ele.id + "Description").css("z-index", "2");
-    $("#" + ele.id + "Description").css("opacity", "1");
-    $("#" + ele.id + "Description").css("visibility", "visible");
-    $(".gallery").css("width", "45vw");
-    //$(".projDescription").css("z-index", 2);
-    $("#projects").css("opacity", "0");
-    $("#projects").css("visibility", "hidden");    
-}
-
-function closeProject(){
-    $("#filters").css("font-size", 1.46 + "vw");
-    $(".tag").css("opacity", "1");
-    $("#" + openProject + "Description").css("opacity", "0");
-    $("#" + openProject + "Description").css("z-index", "-1");
-    $("#" + openProject + "Description").css("visibility", "hidden");
-    $(".gallery").css("width", "0vw");
-    //$(".projDescription").css("z-index", -1);
-    $("#projects").css("opacity", "1");
-    $("#projects").css("visibility", "visible");   
-    openProject = "null";
-}
-
-function setSize(){
-    //$("#descriptions").css("top", "-" + $("#videoContainer").css("height"));
-}
-
-function parallaxOn(event, ele){
-    var a = new Object();//mouse position
-    a.x = event.clientX;
-    a.y = event.clientY;
-    var b = new Object();//center position of element 
-    b.x = (ele.getBoundingClientRect().width / 2.0) + ele.getBoundingClientRect().x;
-    b.y = (ele.getBoundingClientRect().height / 2.0) + ele.getBoundingClientRect().y;
-    if(isNaN(b.x)){
-        ele.children[1].style.left = "50%";
-        ele.children[1].style.top = "50%";
+        //e.childNodes[1].childNodes[1].childNodes[1];//set title
+        e.childNodes[5].style.opacity = "1";//set projects to full opacity
+        e.childNodes[5].style.display = "flex";//set projects to full opacity
+        e.childNodes[5].style.visibility = "visible";//set projects to visible
     }
     else{
-        var dist = distance(a, b, ele.getBoundingClientRect().width);
-        ele.children[1].style.left = parseInt(dist.x * 10.0 + 50.0) + "%";
-        ele.children[1].style.top =  parseInt(dist.y * 10.0 + 50.0) + "%";
+        e.childNodes[1].childNodes[1].childNodes[1].style.fontFamily = "montExtraLight";
+        var projText = e.childNodes[1].childNodes[1].childNodes[3].innerHTML;
+        projText = "+" + projText.substr(1,projText.length);
+        e.childNodes[1].childNodes[1].childNodes[3].innerHTML = projText;
+        var all = document.getElementsByClassName("title");
+        for(var i = 0; i < all.length; i++){
+            all[i].style.fontSize = "4.375vw";
+        }
+        all = document.getElementsByClassName("projCount");
+        for(var i = 0; i < all.length; i++){
+            all[i].style.fontSize = "1.3vw";
+        }
+        all = document.getElementsByClassName("hoverImg");
+        for(var i = 0; i < all.length; i++){
+            all[i].style.width = "6.875vw";
+        }
+        e.childNodes[5].style.opacity = "0";
+        e.childNodes[5].style.display = "none";//set projects to full opacity
+        e.childNodes[5].style.visibility = "collapse";
     }
-    
-}
-
-//Returs x, y distance in a percentage
-function distance(a, b, w){
-    var c = new Object();
-    c.x = (a.x-b.x) / w;
-    c.y = (a.y-b.y) / w;
-    return c;//
-}
-
-function lerp (start, end, amt){
-    return (1-amt)*start+amt*end;
-}
-
-function parallaxOff(event, ele){
-    //clearInterval(repeater);
-    ele.children[1].style.top = "50%";
-    ele.children[1].style.left = "50%";
-}
-
-function loadImage(ele){
-    $("#imageExpand").css("opacity", "1");
-    $("#imageExpand").css("display", "flex");
-    $("#imageExpand").css("z-index", "3");
-    var source = ele.src;
-    var folder = ele.src;
-    folder = source.substr(0, source.search("/SmallScale"));
-    source = source.substr(source.search("/SmallScale") + 12, source.length);
-    console.log(folder);
-    //$("#imageExpand").css("background-image", "url(assets/Photos/FullScale/" + source + ")");
-    document.getElementById("imageExpand").style.backgroundImage = "url(" + folder + "/FullScale/" + source + ")";
-    //$("#imgExpanded").css("style", "assets/Photos/FullScale/Conversation.jpg");
-    //document.getElementById("imgExpanded").src = "assets/Photos/FullScale/" + source;
-}
-
-function closeImage(){
-    $("#imageExpand").css("opacity", "0");
-    $("#imageExpand").css("display", "none");
-    $("#imageExpand").css("z-index", "0");
-    //$("#imgExpanded").css("style", "assets/Photos/FullScale/Conversation.jpg");
-    //document.getElementById("imgExpanded").src = "";
 }
