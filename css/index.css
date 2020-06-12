@@ -13,6 +13,7 @@
 .type{
     flex-direction: column;
     width: 100%;
+    margin-top: 1.04vw;
 }
 
 .topType{
@@ -74,6 +75,12 @@
     transition: visibility 0.5s, opacity 0.5s linear, display 0.5s, max-height 0.2s;
 }
 
+
+.project{
+    margin-bottom: 4.16vw;
+    flex-direction: column;
+}
+
 .projectTitle{
     font-family: montMed;
     font-size: 2.08vw;
@@ -95,11 +102,12 @@
     margin-top: 1.56vw;
     display: flex;
     flex-wrap: nowrap;
-    overflow-x: hidden;
+    overflow-x:hidden;
+    width: auto;
 }
 
 .projectBottom:hover{
-    overflow-x: auto;
+    overflow-x: scroll;
 }
 
 .apps{
@@ -118,6 +126,7 @@
 .appIcon{
     width: 2.08vw;
     height: 2.08vw;
+    margin-left: 1.0vw;
 }
 
 .apps{
