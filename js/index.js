@@ -9,12 +9,10 @@ function openProjects(e){
         var projText = e.childNodes[1].childNodes[1].childNodes[3].innerHTML;
         projText = "-" + projText.substr(1,projText.length);
         e.childNodes[1].childNodes[1].childNodes[3].innerHTML = projText;
-        console.log(e.childNodes[1].childNodes[3].childNodes);
-        
         e.childNodes[1].childNodes[1].childNodes[1].style.fontSize = "2.19vw";
         e.childNodes[1].childNodes[1].childNodes[3].style.fontSize = "0.625vw";
         
-        all = e.childNodes[1].childNodes[3].childNodes;
+        var all = e.childNodes[1].childNodes[3].childNodes;
         for(var i = 1; i < all.length; i += 2){
             all[i].style.width = "2.625vw";
         }
@@ -28,20 +26,39 @@ function openProjects(e){
         var projText = e.childNodes[1].childNodes[1].childNodes[3].innerHTML;
         projText = "+" + projText.substr(1,projText.length);
         e.childNodes[1].childNodes[1].childNodes[3].innerHTML = projText;
-        var all = document.getElementsByClassName("title");
-        for(var i = 0; i < all.length; i++){
-            all[i].style.fontSize = "4.375vw";
-        }
-        all = document.getElementsByClassName("projCount");
-        for(var i = 0; i < all.length; i++){
-            all[i].style.fontSize = "1.3vw";
-        }
-        all = document.getElementsByClassName("hoverImg");
-        for(var i = 0; i < all.length; i++){
+        e.childNodes[1].childNodes[1].childNodes[1].style.fontSize = "4.375vw";
+        e.childNodes[1].childNodes[1].childNodes[3].style.fontSize = "1.3vw";
+        
+        var all = e.childNodes[1].childNodes[3].childNodes;
+        console.log(all);
+        for(var i = 1; i < all.length; i += 2){
             all[i].style.width = "6.875vw";
         }
         e.childNodes[5].style.opacity = "0";
         e.childNodes[5].style.display = "none";//set projects to full opacity
         e.childNodes[5].style.visibility = "collapse";
     }
+}
+
+function loadImage(ele){
+    $("#imageExpand").css("opacity", "1");
+    $("#imageExpand").css("display", "flex");
+    $("#imageExpand").css("z-index", "3");
+    var source = ele.src;
+    var folder = ele.src;
+    folder = source.substr(0, source.search("/SmallScale"));
+    source = source.substr(source.search("/SmallScale") + 12, source.length);
+    console.log(folder);
+    //$("#imageExpand").css("background-image", "url(assets/Photos/FullScale/" + source + ")");
+    document.getElementById("imageExpand").style.backgroundImage = "url(" + folder + "/FullScale/" + source + ")";
+    //$("#imgExpanded").css("style", "assets/Photos/FullScale/Conversation.jpg");
+    //document.getElementById("imgExpanded").src = "assets/Photos/FullScale/" + source;
+}
+
+function closeImage(){
+    $("#imageExpand").css("opacity", "0");
+    $("#imageExpand").css("display", "none");
+    $("#imageExpand").css("z-index", "0");
+    //$("#imgExpanded").css("style", "assets/Photos/FullScale/Conversation.jpg");
+    //document.getElementById("imgExpanded").src = "";
 }

@@ -139,4 +139,27 @@
     width: 13.02vw;
     height: 13.02vw;
     margin-right: 2.6vw;
+    cursor: pointer;
+}
+
+
+/*********************
+    IMAGE EXPANDED
+********************/
+#imageExpand{
+    transition: all 1.0s ease;
+    position: fixed;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+    justify-content: center;
+    align-items: center;
+    display: none;
+    cursor: pointer;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    
 }
