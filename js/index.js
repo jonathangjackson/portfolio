@@ -30,7 +30,6 @@ function openProjects(e){
         e.childNodes[1].childNodes[1].childNodes[3].style.fontSize = "1.3vw";
         
         var all = e.childNodes[1].childNodes[3].childNodes;
-        console.log(all);
         for(var i = 1; i < all.length; i += 2){
             all[i].style.width = "6.875vw";
         }
@@ -48,7 +47,6 @@ function loadImage(ele){
     var folder = ele.src;
     folder = source.substr(0, source.search("/SmallScale"));
     source = source.substr(source.search("/SmallScale") + 12, source.length);
-    console.log(folder);
     //$("#imageExpand").css("background-image", "url(assets/Photos/FullScale/" + source + ")");
     document.getElementById("imageExpand").style.backgroundImage = "url(" + folder + "/FullScale/" + source + ")";
     //$("#imgExpanded").css("style", "assets/Photos/FullScale/Conversation.jpg");
@@ -61,4 +59,17 @@ function closeImage(){
     $("#imageExpand").css("z-index", "0");
     //$("#imgExpanded").css("style", "assets/Photos/FullScale/Conversation.jpg");
     //document.getElementById("imgExpanded").src = "";
+}
+
+function highlight(ele){
+    console.log(getComputedStyle(ele.childNodes[1]).fontFamily);
+    if(getComputedStyle(ele.childNodes[1]).fontFamily !== "montReg"){
+        ele.childNodes[1].style.fontFamily = "montReg";
+    }
+}
+
+function unHighlight(ele){
+    if(getComputedStyle(ele.childNodes[1]).fontFamily === "montReg"){
+        ele.childNodes[1].style.fontFamily = "montExtraLight";
+    }
 }
