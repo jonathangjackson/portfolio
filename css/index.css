@@ -24,12 +24,6 @@
     font-family: montReg;
     cursor: pointer;
 }
-
-.topType:hover > section{
-  visibility: visible;
-  opacity: 1;
-}
-
 .typeInfo{
     flex-direction: column;
 }
@@ -162,4 +156,19 @@
     background-size: contain;
     background-position: center;
     
+}
+
+
+/*********************
+     MEDIA QUERIES
+********************/
+
+@media only screen and (min-width: 768px) {
+    
+
+    .topType:hover > section{
+  visibility: visible;
+  opacity: 1;
+}
+
 }
