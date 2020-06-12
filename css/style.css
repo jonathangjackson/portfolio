@@ -80,7 +80,7 @@ a{
     flex-direction: row;
     justify-content:space-between;
     align-items: center;
-    font-size: 1.04vw;/*20px/1920 * 100 = 1.04*/
+    font-size: 1.4vw;/*20px/1920 * 100 = 1.04*/
     color: #C0C0C0;
 }
 
