@@ -20,10 +20,6 @@
     justify-content: space-between;
 }
 
-.typeInfo:hover > div{
-    font-family: montReg;
-    cursor: pointer;
-}
 .typeInfo{
     flex-direction: column;
 }
@@ -163,12 +159,22 @@
      MEDIA QUERIES
 ********************/
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 1020px) {
     
+    .typeInfo:hover > div{
+        font-family: montReg;
+        cursor: pointer;
+    }
 
     .topType:hover > section{
-  visibility: visible;
-  opacity: 1;
-}
+      visibility: visible;
+      opacity: 1;
+    }
 
+}
+@media only screen and (max-width: 1020px) {
+    
+    .typeInfo:hover > div{
+        cursor: pointer;
+    }
 }
