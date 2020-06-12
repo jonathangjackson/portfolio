@@ -104,10 +104,12 @@
     flex-wrap: nowrap;
     overflow-x:hidden;
     width: auto;
+    -webkit-overflow-scrolling: touch;
 }
 
 .projectBottom:hover{
     overflow-x: scroll;
+    -webkit-overflow-scrolling: touch;
 }
 
 .apps{
