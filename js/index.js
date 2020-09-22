@@ -29,6 +29,8 @@ var projects = [messanger, music, station];
 var highlightColor = "rgba(161,255,255, 1)";//rgba(255,162,0, 1)
 
 function run(){
+    document.getElementById("section_about").style.color = highlightColor;
+    document.getElementById("section_about").style.color =  "bold";
     var x = document.getElementsByClassName("rectangles");
     for(var i = 0; i < x.length; i++){
         var y = window.getComputedStyle(x[i].parentElement.parentElement).width;
