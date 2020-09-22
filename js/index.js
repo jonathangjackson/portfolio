@@ -50,6 +50,7 @@ function gallery(){
 var oldSlide = null;
 
 function loadProj(ele){
+    populateDescription(ele.id);
     var gallery = document.getElementById("gallery");
     var projNav = document.getElementById("projNav");
     var projDes = document.getElementById("projectDescriptions");
@@ -67,31 +68,32 @@ function loadProj(ele){
     projDes.style.margin = "0";
     projDes.style.opacity = 1;
     slider.style.justifyContent = "flex-start";
+    
+    document.getElementById("projectDescriptions").style.height = window.getComputedStyle(gallery).height;
+    
     gallery.style.display = "none";
     
     oldSlide = document.getElementById("1");
     oldSlide.style.backgroundColor= "rgba(255,162,0, 1)";
     document.getElementById("img1").style.display = "flex";
-    populateDescription(ele.id);
 }
 
 function populateDescription(id){
     /*Erase Current Content*/
     var galCount = document.getElementById("galNum");
     
-    var count = (galCount.childNodes.length - 3) / 2;
-    if((galCount.childNodes.length - 3) / 2 > 0){
+    var count = (galCount.childNodes.length - 2);
+    if(count > 0){
         for(var i = 0; i < count; i++){
-            galCount.removeChild(galCount.childNodes[galCount.childNodes.length - 2]);
             galCount.removeChild(galCount.childNodes[galCount.childNodes.length - 1]);
         }
     }
     
     var slideCount = document.getElementById("slideNum");
-    count = (slideCount.childNodes.length - 3) / 2;
-    if((slideCount.childNodes.length - 3) / 2 > 0){
+    count = (slideCount.childNodes.length - 2);
+    
+    if(count > 0){
         for(var i = 0; i < count; i++){
-            slideCount.removeChild(slideCount.childNodes[slideCount.childNodes.length - 2]);
             slideCount.removeChild(slideCount.childNodes[slideCount.childNodes.length - 1]);
         }
     }
