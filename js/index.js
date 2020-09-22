@@ -3,7 +3,7 @@ var messanger = {
     id: "messanger",
     name: "Messanger Concept",
     description: "wireframes  |  prototypes  |  adobe xd",
-    type: "UI",
+    type: "ui_ux",
     images: ["assets/UI/FullScale/Dark.png", "assets/UI/FullScale/Light.png"]
 };
 
@@ -11,12 +11,20 @@ var music = {
     id: "music",
     name: "Music Player Concept",
     description: "wireframes  |  prototypes  |  adobe xd",
-    type: "UI",
+    type: "ui_ux",
     images: ["assets/UI/FullScale/SongsDark.png", "assets/UI/FullScale/PlayerDark.png"]
 };
 
+var station = {
+    id: "station",
+    name: "Station Six VR Game",
+    description: "unity  |  c#  |  game design  |  prototypes",
+    type: "game_design",
+    images: ["assets/VR/FullScale/GeneratorRoom.png", "assets/VR/FullScale/LabRender.png", "assets/VR/FullScale/Storage.png", "assets/VR/FullScale/Minerva.png"]
+};
+
 /*projects*/
-var projects = [messanger, music];
+var projects = [messanger, music, station];
 
 
 function run(){
@@ -45,6 +53,28 @@ function gallery(){
         
     }
     
+}
+
+function filter(ele){
+    var temp = document.getElementById("selected").innerHTML;
+    document.getElementById("selected").innerHTML = ele.innerHTML;
+    ele.innerHTML = temp;
+    temp = document.getElementById("selected").innerHTML;
+    var filter = temp.substr(1, temp.length);
+    if(filter === "general"){
+        for(var i = 0; i < projects.length; i++){
+            document.getElementById(projects[i].id).style.display = "flex";
+        }
+        return;
+    }
+    for(var i = 0; i < projects.length; i++){
+        if(projects[i].type === filter){
+            document.getElementById(projects[i].id).style.display = "flex";
+        }
+        else{
+            document.getElementById(projects[i].id).style.display = "none";
+        }
+    }
 }
 
 var oldSlide = null;
@@ -97,6 +127,7 @@ function populateDescription(id){
             slideCount.removeChild(slideCount.childNodes[slideCount.childNodes.length - 1]);
         }
     }
+    console.log(slideCount.childNodes.length - 2);
     
     /*Add Content*/
     var x = 0;
@@ -108,21 +139,21 @@ function populateDescription(id){
     
     var imgEle = document.getElementsByClassName("projGalImg")[0];
     var slideEle = document.getElementsByClassName("dot")[0];
-    var cloneImg = imgEle.cloneNode(true);
-    var cloneSlide = slideEle.cloneNode(true);
     imgEle.src = projects[x].images[0];
     
     for(var i = 1; i < projects[x].images.length; i++){
+        var cloneImg = imgEle.cloneNode(true);
+        var cloneSlide = slideEle.cloneNode(true);
         cloneImg.id = "img" + (i+1);
         cloneImg.src = projects[x].images[i];
         cloneImg.style.display = "none";
         imgEle.after(cloneImg);
-        imgEle = cloneImg;
+        //imgEle = cloneImg.cloneNode(true);
         
         cloneSlide.id = i + 1;
         cloneSlide.style.backgroundColor = "rgba(255,255,255, 0.6)";
         slideEle.after(cloneSlide);
-        slideEle = cloneSlide;
+        //slideEle = cloneSlide.cloneNode(true);
     }
     
     
@@ -168,4 +199,23 @@ function back(){
     oldSlide = document.getElementById("1");
     oldSlide.style.backgroundColor= "rgba(255,162,0, 0)";
     document.getElementById("img1").style.display = "none";
+    
+    /*Erase Current Content*/
+    var galCount = document.getElementById("galNum");
+    
+    var count = (galCount.childNodes.length - 2);
+    if(count > 0){
+        for(var i = 0; i < count; i++){
+            galCount.removeChild(galCount.childNodes[galCount.childNodes.length - 1]);
+        }
+    }
+    
+    var slideCount = document.getElementById("slideNum");
+    count = (slideCount.childNodes.length - 2);
+    
+    if(count > 0){
+        for(var i = 0; i < count; i++){
+            slideCount.removeChild(slideCount.childNodes[slideCount.childNodes.length - 1]);
+        }
+    }
 }
