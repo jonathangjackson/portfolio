@@ -1,75 +1,169 @@
-function sendProject(e){
-    var ele = e.parentNode.parentElement;
-    openProjects(ele);
+/*Project Structure*/
+var messanger = {
+    id: "messanger",
+    name: "Messanger Concept",
+    description: "wireframes  |  prototypes  |  adobe xd",
+    type: "UI",
+    images: ["assets/UI/FullScale/Dark.png", "assets/UI/FullScale/Light.png"]
+};
+
+var music = {
+    id: "music",
+    name: "Music Player Concept",
+    description: "wireframes  |  prototypes  |  adobe xd",
+    type: "UI",
+    images: ["assets/UI/FullScale/SongsDark.png", "assets/UI/FullScale/PlayerDark.png"]
+};
+
+/*projects*/
+var projects = [messanger, music];
+
+
+function run(){
+    var x = document.getElementsByClassName("rectangles");
+    for(var i = 0; i < x.length; i++){
+        var y = window.getComputedStyle(x[i].parentElement.parentElement).width;
+        x[i].style.width = y;
+    }
+    gallery();
 }
 
-function openProjects(e){
-    if(getComputedStyle(e.childNodes[5]).opacity === "0"){
-        e.childNodes[1].childNodes[1].childNodes[1].style.fontFamily = "montReg";
-        var projText = e.childNodes[1].childNodes[1].childNodes[3].innerHTML;
-        projText = "-" + projText.substr(1,projText.length);
-        e.childNodes[1].childNodes[1].childNodes[3].innerHTML = projText;
-        e.childNodes[1].childNodes[1].childNodes[1].style.fontSize = "2.19vw";
-        e.childNodes[1].childNodes[1].childNodes[3].style.fontSize = "0.625vw";
-        
-        var all = e.childNodes[1].childNodes[3].childNodes;
-        for(var i = 1; i < all.length; i += 2){
-            all[i].style.width = "2.625vw";
+function gallery(){
+    var galleryWidth = window.getComputedStyle(document.getElementById("gallery")).width;
+    var mobile = document.getElementsByClassName("mobile");
+    var web = document.getElementsByClassName("web");
+    if(mobile.length + web.length > 1){
+        for(var i = 0; i < mobile.length; i++){
+            mobile[i].style.width = "20%";
+            
         }
-        //e.childNodes[1].childNodes[1].childNodes[1];//set title
-        e.childNodes[5].style.opacity = "1";//set projects to full opacity
-        e.childNodes[5].style.display = "flex";//set projects to full opacity
-        e.childNodes[5].style.visibility = "visible";//set projects to visible
+        for(var i = 0; i < web.length; i++){
+            web[i].style.width = "78%";
+        }
     }
     else{
-        e.childNodes[1].childNodes[1].childNodes[1].style.fontFamily = "montExtraLight";
-        var projText = e.childNodes[1].childNodes[1].childNodes[3].innerHTML;
-        projText = "+" + projText.substr(1,projText.length);
-        e.childNodes[1].childNodes[1].childNodes[3].innerHTML = projText;
-        e.childNodes[1].childNodes[1].childNodes[1].style.fontSize = "4.375vw";
-        e.childNodes[1].childNodes[1].childNodes[3].style.fontSize = "1.3vw";
         
-        var all = e.childNodes[1].childNodes[3].childNodes;
-        for(var i = 1; i < all.length; i += 2){
-            all[i].style.width = "6.875vw";
+    }
+    
+}
+
+var oldSlide = null;
+
+function loadProj(ele){
+    var gallery = document.getElementById("gallery");
+    var projNav = document.getElementById("projNav");
+    var projDes = document.getElementById("projectDescriptions");
+    
+    var slider = document.getElementById("slider");
+    gallery.style.opacity = 0;
+    gallery.style.transform = "translate(-100%, 0)";
+    
+    slider.style.transform = "translate(0%, 0)";
+    //projNav.style.opacity = 0;
+    //projNav.style.transform = "translate(-100%, 0)";
+    
+    projDes.style.display = "flex";
+    projDes.style.transform = "translate(0, 0)";
+    projDes.style.margin = "0";
+    projDes.style.opacity = 1;
+    slider.style.justifyContent = "flex-start";
+    gallery.style.display = "none";
+    
+    oldSlide = document.getElementById("1");
+    oldSlide.style.backgroundColor= "rgba(255,162,0, 1)";
+    document.getElementById("img1").style.display = "flex";
+    populateDescription(ele.id);
+}
+
+function populateDescription(id){
+    /*Erase Current Content*/
+    var galCount = document.getElementById("galNum");
+    
+    var count = (galCount.childNodes.length - 3) / 2;
+    if((galCount.childNodes.length - 3) / 2 > 0){
+        for(var i = 0; i < count; i++){
+            galCount.removeChild(galCount.childNodes[galCount.childNodes.length - 2]);
+            galCount.removeChild(galCount.childNodes[galCount.childNodes.length - 1]);
         }
-        e.childNodes[5].style.opacity = "0";
-        e.childNodes[5].style.display = "none";//set projects to full opacity
-        e.childNodes[5].style.visibility = "collapse";
     }
-}
-
-function loadImage(ele){
-    $("#imageExpand").css("opacity", "1");
-    $("#imageExpand").css("display", "flex");
-    $("#imageExpand").css("z-index", "3");
-    var source = ele.src;
-    var folder = ele.src;
-    folder = source.substr(0, source.search("/SmallScale"));
-    source = source.substr(source.search("/SmallScale") + 12, source.length);
-    //$("#imageExpand").css("background-image", "url(assets/Photos/FullScale/" + source + ")");
-    document.getElementById("imageExpand").style.backgroundImage = "url(" + folder + "/FullScale/" + source + ")";
-    //$("#imgExpanded").css("style", "assets/Photos/FullScale/Conversation.jpg");
-    //document.getElementById("imgExpanded").src = "assets/Photos/FullScale/" + source;
-}
-
-function closeImage(){
-    $("#imageExpand").css("opacity", "0");
-    $("#imageExpand").css("display", "none");
-    $("#imageExpand").css("z-index", "0");
-    //$("#imgExpanded").css("style", "assets/Photos/FullScale/Conversation.jpg");
-    //document.getElementById("imgExpanded").src = "";
-}
-
-function highlight(ele){
-    console.log(getComputedStyle(ele.childNodes[1]).fontFamily);
-    if(getComputedStyle(ele.childNodes[1]).fontFamily !== "montReg"){
-        ele.childNodes[1].style.fontFamily = "montReg";
+    
+    var slideCount = document.getElementById("slideNum");
+    count = (slideCount.childNodes.length - 3) / 2;
+    if((slideCount.childNodes.length - 3) / 2 > 0){
+        for(var i = 0; i < count; i++){
+            slideCount.removeChild(slideCount.childNodes[slideCount.childNodes.length - 2]);
+            slideCount.removeChild(slideCount.childNodes[slideCount.childNodes.length - 1]);
+        }
     }
+    
+    /*Add Content*/
+    var x = 0;
+    while(id != projects[x].id){
+        x++;
+    }
+    document.getElementsByClassName("projHeaderTitle")[0].innerHTML = projects[x].name;
+    document.getElementsByClassName("projHeaderDesc")[0].innerHTML =  projects[x].description;
+    
+    var imgEle = document.getElementsByClassName("projGalImg")[0];
+    var slideEle = document.getElementsByClassName("dot")[0];
+    var cloneImg = imgEle.cloneNode(true);
+    var cloneSlide = slideEle.cloneNode(true);
+    imgEle.src = projects[x].images[0];
+    
+    for(var i = 1; i < projects[x].images.length; i++){
+        cloneImg.id = "img" + (i+1);
+        cloneImg.src = projects[x].images[i];
+        cloneImg.style.display = "none";
+        imgEle.after(cloneImg);
+        imgEle = cloneImg;
+        
+        cloneSlide.id = i + 1;
+        cloneSlide.style.backgroundColor = "rgba(255,255,255, 0.6)";
+        slideEle.after(cloneSlide);
+        slideEle = cloneSlide;
+    }
+    
+    
 }
 
-function unHighlight(ele){
-    if(getComputedStyle(ele.childNodes[1]).fontFamily === "montReg"){
-        ele.childNodes[1].style.fontFamily = "montExtraLight";
+function changeSlide(ele){
+    if(oldSlide === null){
+        console.log("ERROR");
+        oldSlide = ele;
     }
+    else{
+        if(oldSlide === ele){
+            return;
+        }
+        oldSlide.style.backgroundColor = "rgb(255, 255, 255)";
+        document.getElementById("img" + oldSlide.id).style.display = "none";
+        oldSlide = ele;
+        document.getElementById("img" + oldSlide.id).style.display = "flex";
+    }
+    ele.style.backgroundColor= "rgba(255,162,0, 1)";
+}
+
+function back(){
+    var gallery = document.getElementById("gallery");
+    var projNav = document.getElementById("projNav");
+    var projDes = document.getElementById("projectDescriptions");
+    
+    var slider = document.getElementById("slider");
+    gallery.style.opacity = 1;
+    gallery.style.transform = "translate(0%, 0)";
+    
+    slider.style.transform = "translate(0%, 0)";
+    //projNav.style.opacity = 0;
+    //projNav.style.transform = "translate(-100%, 0)";
+    
+    projDes.style.display = "none";
+    projDes.style.transform = "translate(100, 0)";
+    projDes.style.margin = "0";
+    projDes.style.opacity = 0;
+    slider.style.justifyContent = "flex-start";
+    gallery.style.display = "flex";
+    
+    oldSlide = document.getElementById("1");
+    oldSlide.style.backgroundColor= "rgba(255,162,0, 0)";
+    document.getElementById("img1").style.display = "none";
 }

@@ -1,190 +1,350 @@
 @charset "utf-8";
 
-/*********************
-    Project Types
-********************/
-#projectTypes{
-    flex-direction: column;
-    letter-spacing: 0.3em;
-    color: white;
-    margin-top: 2vw;
+
+@font-face{
+    font-family: montSemiBold;
+    src: url(../fonts/Montserrat/Montserrat-Bold.tff);
+}
+@font-face{
+    font-family: montLight;
+    src: url(../fonts/Montserrat/Montserrat-Light.tff);
+}
+/*BODY*/
+#head{
+    flex-direction: row;
+    margin-bottom: 0px;
+    float: left;
+    
 }
 
-.type{
-    flex-direction: column;
-    width: 100%;
-    margin-top: 1.04vw;
+#banner{
+    float: left;
+    width: 5.21vw; 
+    margin-left: 2.08vw;
 }
 
-.topType{
-    justify-content: space-between;
-}
-
-.typeInfo{
-    flex-direction: column;
-}
-
-.hoverImgSection{
-    justify-content: flex-end;
-    align-items: center;
-    visibility: hidden;
-    opacity: 0;
-    transition: visibility 0.5s, opacity 0.5s linear;
-    margin-right: 1.04vw;
-}
-
-.hoverImg{
-    width: 6.875vw;
-    margin-left: 1.042vw;
-    transition: width 0.5s;
-}
-
-.title{
-    font-family: montExtraLight;
-    font-size: 4.375vw;
-    transition: font-size 0.5s;
-}
-
-.projCount{
-    margin-bottom: 0.52vw;
-    font-family: montThin;
-    font-size: 1.3vw;
-    transition: font-size 0.5s;
-}
-
-
-/*********************
-    Project Types
-********************/
-.projects{
-    margin-top: 1.56vw;
-    opacity: 0;
-    visibility: collapse;
-    display: none;
-    flex-direction: column;
-    transition: visibility 0.5s, opacity 0.5s linear, display 0.5s, max-height 0.2s;
-}
-
-
-.project{
-    margin-bottom: 4.16vw;
-    flex-direction: column;
-}
-
-.projectTitle{
+#nav{
+    float: left;
     font-family: montMed;
-    font-size: 2.08vw;
+    font-size: 1.04vw;
+    letter-spacing: 0.15em;
+    margin-top: 8.1vw;
+    margin-left: 1.04vw;
+    color: #E8E8E8;
 }
 
-.projectTop, .projectMiddle{
+#about{
+    margin-top: 3.2vw;
+}
+
+#portrait{
+    width: 22.9vw;
+    margin-left: 8.3vw;
+}
+
+#info{
+    font-family: montExtraLight;
+    font-size: 1.6vw;
+    letter-spacing: 0.12em;
+    color: white;
+    margin-left: 1.04vw;
+    line-height: 4.1vw;
+    margin-top: -1.3vw;
+}
+
+b{
+    font-family: montReg;
+    color: #FFA200;
+}
+
+button{
+    cursor: pointer;
+    background: none;
+    color: white;
+    text-align: left;
+    opacity: 0.4;
+    padding: 0;
+    margin-top: 0.52vw;
+    margin-bottom: 0.52vw;
+    border: none;
+    font-family: montReg;
+    font-weight: bold;
+    font-size: 1.04vw;
+    letter-spacing: 0.14vw;
+}
+
+.header{
+    color: white;
+    font-family: montReg;
+    font-weight: bold;
+    font-size: 1.6vw;
+    letter-spacing: 0.14vw;
+    flex-direction: row;
+}
+
+#filterSection{
+    flex-direction: column;
+}
+
+#title{
+    color: #FFA200;
+}
+
+#selected{
+    margin-left: 0.7vw;
+    margin-bottom:0.52vw; 
+}
+
+#projects{
+    flex-direction: column;
+}
+
+#projNav{
+    flex-direction: column; 
+    margin-left: auto;
+    margin-right: 8.3vw;
+    transition: opacity 0.5s ease-in-out, transform 0.75s ease-in-out;
+}
+
+#filters{
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 0.7vw;
+}
+
+#gallery{
+    max-width: 66vw;
+    margin-left: 8.3vw;
+    flex-wrap: wrap;
+    justify-content: space-between;    
+    transition: opacity 0.5s ease-in-out, transform 0.75s ease-in-out;
+}
+
+.img{
+    justify-content: center;
+}
+
+.projImg{
+    filter: grayscale(100%);
+    transition: filter 0.25s ease-in-out;
+    z-index: -1;
+    width:100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.projName{
+    opacity: 0;
+    text-align: center;
+    max-width: 100%;
+    height: auto;
+    position: absolute;
+    flex-direction: column;
+    color:white;
+    font-family: montReg;
+    font-weight: bold;
+    align-self: center;
+    transition: opacity .25s ease-in-out;
+}
+
+.projTitle{
+    flex-direction: column;
+    align-self: center;
+    font-weight: 100;
+    font-style: italic;
+}
+
+.img:hover{
+    cursor: pointer;
+}
+
+.img:hover > .projName{
+    opacity: 1;
+    transition: opacity .25s ease-in-out;
+}
+
+.projName:hover{
+    cursor: pointer;
+}
+
+.img:hover > .projImg{
+    filter: grayscale(0%) blur(1px);
+    z-index: -1;
+    transition: filter 0.25s ease-in-out;
+}
+
+.web{
+    width: 100%;
+    padding-bottom: 1.04vw;
+    justify-content: center;
+    font-size: 1.3vw;
+    letter-spacing: 0.14vw;
+}
+
+.mobile{
+    width: 100%;
+    padding-bottom: 1.04vw;
+    justify-content: center;
+    font-size: 1.3vw;
+    letter-spacing: 0.14vw;
+}
+
+#projectDescriptions{
+    width: 100%;
+    transform: translateX(150%);
+    opacity: 0;
+    display: none;
+    justify-content: flex-start;
+    transition: opacity 0.5s ease-in-out, transform 0.75s ease-in-out;
+}
+
+.back{
+}
+
+#backBtn{
+    width: 1.4vw;
+    height: 1.7vw;
+    cursor: pointer;
+}
+
+#slider{
+    transition: opacity 0.5s ease-in-out, transform 0.75s ease-in-out;
+}
+
+.projWindow{
+    width: 100%;
+    max-width: 66vw;
+    margin-left: 8.3vw;
+    flex-direction: column;
+}
+
+.projHeader{
     width: 100%;
     justify-content: space-between;
 }
 
-.projectMiddle > div{
-    font-family: montThin;
+.projHeaderText{
+    
+    flex-direction: column;
+    color: white;
+    font-family: montMed;
     font-size: 1.3vw;
-    width: 48vw;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.14vw;
+    text-align: end;
+    font-weight: bolder;
+    justify-content: flex-end;
 }
 
-
-.apps{
-    margin-right: 1.04vw;
+.projHeaderDesc{
+    font-family: montReg;
+    font-size: 0.937vw;
+    margin-top: 0.52vw;
 }
 
-.projectDescription{
-    text-align: justify;
+.projGal{
+    flex-direction: column;
 }
 
-.appDescription{
-    text-align: right;
-    margin-right: 1.04vw;
-}
-
-.appIcon{
-    width: 2.08vw;
-    height: 2.08vw;
-    margin-left: 1.0vw;
-}
-
-.apps{
-    align-items: center;
-}
-
-.projectImg{
-    width: 13.02vw;
-    height: 13.02vw;
-    margin-right: 2.6vw;
-    cursor: pointer;
-}
-
-
-/*********************
-    IMAGE EXPANDED
-********************/
-#imageExpand{
-    transition: all 1.0s ease;
-    position: fixed;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+.projGalImg{
     justify-content: center;
-    align-items: center;
+    align-content: center;
+    margin: auto;
+    margin-top: 2.08vw;
+    max-height: 37.4vw;
+    max-width: 66vw;
+    height: auto;
+    filter: drop-shadow(0px 0px 2.6vw rgba(0, 0, 0, 0.7));
     display: none;
+}
+
+.projGalSlide{
+    justify-content:center;
+}
+
+.dot{
     cursor: pointer;
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
-    
+    height: 0.52vw;
+    width: 3.8vw;
+    margin-left: 1.04vw;
+    margin-right: 1.04vw;
+    background-color: rgba(255,255,255, 0.6);
+    border-radius: 0.5vw;
+    display: inline-block;
+    transition: background-color 0.6s ease;
 }
 
-
-/*********************
-     MEDIA QUERIES
-********************/
-
-@media only screen and (min-width: 1020px) {
-    .projectBottom{
-        margin-top: 1.56vw;
-        display: flex;
-        flex-wrap: nowrap;
-        overflow-x:hidden;
-        width: auto;
-        -webkit-overflow-scrolling: touch;
-    }
-
-    .projectBottom:hover{
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-    }
-    
-    .typeInfo:hover > div{
-        font-family: montReg;
-        cursor: pointer;
-    }
-
-    .topType:hover > section{
-      visibility: visible;
-      opacity: 1;
-    }
-
+.dot:hover{
+    opacity: 0.4;
 }
 
-@media only screen and (max-width: 1020px) {
-    
-    .projectBottom{
-        margin-top: 1.56vw;
-        display: flex;
-        flex-wrap: nowrap;
-        overflow-x: auto;
-        width: auto;
-        -webkit-overflow-scrolling: touch;
+#slideClicked{
+    background-color: rgba(255,162,0, 1);
+    transition: background-color 0.6s ease;
+}
+@media only screen and (min-width: 1920px) {
+    body {
+        width: 1840px;
+        margin: auto;
     }
     
-    .typeInfo:hover > div{
-        cursor: pointer;
+    #banner{
+        float: left;
+        width: 100px;
+        height: 180px;
+        margin: 0;
+    }
+    
+    #nav{
+        float: left;
+        font-size: 20px;
+        letter-spacing: auto;
+        margin-top: 156px;
+        color: #E8E8E8;
+        margin-left: 20px;
+    }
+    
+    #about{
+        margin-top: 60px;
+    }
+    
+    #portrait{
+        width: 440px;
+        margin-left: 120px;
+    }
+    
+    #info{
+        font-size: 30px;
+        line-height: 80px;
+        margin-top: -25px;
+    }
+    
+    #projNav{
+        margin-right: 0;
+    }
+    
+    #selected{
+        margin-left: 20px;
+        margin-bottom:10px; 
+    }
+    
+    button{
+        font-size: 20px;
+        letter-spacing: 3px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    
+    .header{
+        font-size: 30px;
+        letter-spacing: 3px;
+    }
+    
+    #projects{
+        margin-top: 120px;
+    }
+    
+    #gallery{
+        width: 1400px;
+        margin-left: 120px;
     }
 }

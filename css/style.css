@@ -24,7 +24,6 @@
   src: url(../fonts/Montserrat/Montserrat-Medium.ttf);
 }
 
-
 /*********************
         MAIN
 ********************/
@@ -33,20 +32,34 @@
     cursor: default;
 }
 
-body {
-    background-color:#171717;
-    margin-left: 1.04vw;
-}
-
-img {
-    max-width: 100%;
+#wrapper{
+    flex-direction: column;
     height: auto;
-    border-radius: 4%;
 }
 
-video{
-    border-radius: 4%;
-    height: 13.02vw;
+
+a:link{
+    background: none; 
+    color: #E8E8E8;
+    font-family: montMed;
+    margin: 0;
+    padding: 0;
+    border: none;
+    
+}
+
+a:hover{
+    cursor: pointer;
+}
+
+a:visited{
+    color: #FFA200;
+}
+
+a:active{
+    color: #FFA200;
+    outline: none;
+    background: none;
 }
 
 section{
@@ -56,34 +69,8 @@ section{
   display: flex;
 }
 
-a{
-    text-decoration: none;
-    color: #C0C0C0;
-    cursor: pointer;
-}
-
-#wrapper{
-    flex-direction: column;
-    width: 100%;
-    height: auto;
-}
-
-#head{
-    /*
-    position: -webkit-sticky; 
-    position: sticky;
-    top: 1.04vw;
-    z-index: -1;*/
-    font-family: segoeui;   
-    margin-top: 1.04vw;
-    
-    flex-direction: row;
-    justify-content:space-between;
-    align-items: center;
-    font-size: 1.4vw;/*20px/1920 * 100 = 1.04*/
-    color: #C0C0C0;
-}
-
-#contact{
-    margin-right: 1.04vw;
+body {
+    background-color: #1A1A1A;
+    background-image: url(../assets/Icons/BG.svg);
+    background-size: cover;
 }

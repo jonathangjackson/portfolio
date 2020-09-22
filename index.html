@@ -8,366 +8,110 @@
         <script src="js/index.js"></script>
         <title>Jonathan Jackson | Portfolio</title>
     </head>
-    <body>
+    <body onload="run()" onresize="run()">
         <section id="wrapper">
             <section id="head">
-                <div id="name">Jonathan Jackson <b>| Portfolio</b></div>
-                <div id="contact">Interactive Multimedia Designer</div>
+                <div id="logo"><img src="assets/Icons/JJ.svg" id="banner"></div>
+                <nav id="nav"><a >about</a>  |  <a>projects</a>  |  <a>resume</a>  |  <a>contact</a></nav>
             </section>
-            <!--
-            <section id="videoContainer">
-                <div id="title">
-                    <b id="titleText">Interactive Media Designer</b>
-                </div>
-                <div id="subTitle">
-                    BIT in Interactive Multimedia and Design
-                </div>
-            </section>-->
-            <section id="projectTypes">
-                <section class="type" >
-                    <section class="topType">
-                        <section class="typeInfo" onmouseout="unHighlight(this)" onmouseover="highlight(this)" onmousedown="sendProject(this)">
-                            <div class="title">UI/UX DESIGN</div>
-                            <div class="projCount">+4 Projects</div>
-                        </section>
-                        <section class="hoverImgSection">
-                            <img class="hoverImg" src="assets/UI/SmallScale/CalcUI_1.png">
-                            <img class="hoverImg" src="assets/UI/SmallScale/PlayerDark.png">
-                            <img class="hoverImg" src="assets/UI/SmallScale/DrawingUI_1.png">
-                            <img class="hoverImg" src="assets/UI/SmallScale/MeetingUI_1.png">
-                        </section>
-                    </section>
-                    <section class="bottomType">
-                        <svg width="100%" height="1px">
-                            <rect width="100%" height="100%" style="fill:rgb(255,255,255);"></rect>
-                        </svg>
-                    </section>
-                    <section class="projects">
-                        <section class="project">
-                            <section class="projectTop">
-                                <div class="projectTitle">DAILY DESIGNS</div>
-                                <section class="apps">
-                                    <img class="appIcon" src="assets/Icons/XD_Icon.png">
-                                </section>
-                            </section>
-                            <section class="projectMiddle">
-                                <div class="projectDescription">These are a series of designs that were made based on Adobe XD daily design challenges. Included are designs for a professional message application, sign-in page, music player, pizza customizer and a shoe e-commerce experience.</div> 
-                                <div class="appDescription"><b>ADOBE XD |</b> Wireframes, Prototypes, High-Fidelity Designs </div>   
-                            </section>
-                            <section class="projectBottom">
-                                <img onmousedown="loadImage(this)" class="projectImg" src="assets/UI/SmallScale/Dark.png">
-                                <img onmousedown="loadImage(this)" class="projectImg" src="assets/UI/SmallScale/Light.png">
-                                <img onmousedown="loadImage(this)" class="projectImg" src="assets/UI/SmallScale/PlayerDark.png">
-                                <img onmousedown="loadImage(this)" class="projectImg" src="assets/UI/SmallScale/SongsDark.png">
-                                <img onmousedown="loadImage(this)" class="projectImg" src="assets/UI/SmallScale/Shoe_1.png">
-                                <img onmousedown="loadImage(this)" class="projectImg" src="assets/UI/SmallScale/Shoe_2.png">
-                                <img onmousedown="loadImage(this)" class="projectImg" src="assets/UI/SmallScale/SignIn.png">
-                                <img onmousedown="loadImage(this)" class="projectImg" src="assets/UI/SmallScale/SignUp.png">
-                                <img onmousedown="loadImage(this)" class="projectImg" src="assets/UI/SmallScale/Toppings.png">
-                                <img onmousedown="loadImage(this)" class="projectImg" src="assets/UI/SmallScale/ToppingsCrust.png">
-                                <img onmousedown="loadImage(this)" class="projectImg" src="assets/UI/SmallScale/ToppingsSauce.png">
-                                <img onmousedown="loadImage(this)" class="projectImg" src="assets/UI/SmallScale/ToppingsSauce2.png">
-                            </section>
-                        </section>
-                        <section class="project">
-                            <section class="projectTop">
-                                <div class="projectTitle">MEETING MANAGER</div>
-                                <section class="apps">
-                                    <img class="appIcon" src="assets/Icons/XD_Icon.png">
-                                    <img class="appIcon" src="assets/Icons/AndroidStudio_Icon.png">
-                                </section>
-                            </section>
-                            <section class="projectMiddle">
-                                <div class="projectDescription">This project was first designed in Adobe XD then implemented in Android Studio using Java.</div> 
-                                <div id="xd" class="appDescription"><b>ADOBE XD |</b> Wireframes, Prototypes<br><b>ANDROID STUDIO |</b> Development Environment, Java</div>   
-                            </section>
-                            <section class="projectBottom">
-                                <img onmousedown="loadImage(this)" class="projectImg" src="assets/UI/SmallScale/MeetingUI_1.png">
-                                <img onmousedown="loadImage(this)" class="projectImg" src="assets/UI/SmallScale/MeetingUI_2.png">
-                                <img onmousedown="loadImage(this)" class="projectImg" src="assets/UI/SmallScale/MeetingUI_3.png">
-                                <img onmousedown="loadImage(this)" class="projectImg" src="assets/UI/SmallScale/MeetingUI_4.png">
-                            </section>
-                        </section>
-                        <section class="project">
-                            <section class="projectTop">
-                                <div class="projectTitle">DRAWING APP</div>
-                                <section class="apps">
-                                    <img class="appIcon" src="assets/Icons/XD_Icon.png">
-                                    <img class="appIcon" src="assets/Icons/AndroidStudio_Icon.png">
-                                </section>
-                            </section>
-                            <section class="projectMiddle">
-                                <div class="projectDescription">This project was first designed in Adobe XD then implemented in Android Studio using Java. The user can draw circles, rectangles and lines using multi point touch.</div> 
-                                <div id="xd" class="appDescription"><b>ADOBE XD |</b> Wireframes, Prototypes<br><b>ANDROID STUDIO |</b> Development Environment, Java</div>   
-                            </section>
-                            <section class="projectBottom">
-                                <img onmousedown="loadImage(this)" class="projectImg" src="assets/UI/SmallScale/DrawingUI_1.png">
-                                <img onmousedown="loadImage(this)" class="projectImg" src="assets/UI/SmallScale/DrawingUI_2.png">
-                            </section>
-                        </section>
-                        <section class="project">
-                            <section class="projectTop">
-                                <div class="projectTitle">CALCULATOR</div>
-                                <section class="apps">
-                                    <img class="appIcon" src="assets/Icons/XD_Icon.png">
-                                    <img class="appIcon" src="assets/Icons/AndroidStudio_Icon.png">
-                                </section>
-                            </section>
-                            <section class="projectMiddle">
-                                <div class="projectDescription">This project was first designed in Adobe XD then implemented in Android Studio using Java. The user can do all basic functions such as, addition, multiplication, division and subtraction.</div> 
-                                <div id="xd" class="appDescription"><b>ADOBE XD |</b> Wireframes, Prototypes<br><b>ANDROID STUDIO |</b> Development Environment, Java</div>   
-                            </section>
-                            <section class="projectBottom">
-                                <img onmousedown="loadImage(this)" class="projectImg" src="assets/UI/SmallScale/CalcUI_1.png">
-                                <img onmousedown="loadImage(this)" class="projectImg" src="assets/UI/SmallScale/CalcUI_2.png">
-                            </section>
+            <section id="about">
+                    <img id="portrait" src="assets/Icons/Portrait.png">
+                    <div id="info">My name is Jonathan Jackson. <br> I'm a multimedia Developer / Designer.<br>My work is focused on providing<br><b>Creative</b> and<b> Innovative</b> solutions<br>witin emerging and existing mediums.</div>
+            </section>
+            <section id="projects">
+                
+                <section id="projNav">
+                    <section class="header">
+                        <div id="title">projects</div> 
+                        <section id="filterSection">
+                            <div id="selected">/general</div>
+                            <section id="filters"><button>/ui_ux</button><button>/game_design</button><button>/photography</button></section>
                         </section>
                     </section>
                 </section>
-                <section class="type" >
-                    <section class="topType">
-                        <section class="typeInfo" onmouseout="unHighlight(this)" onmouseover="highlight(this)" onmousedown="sendProject(this)">
-                            <div class="title">VIRTUAL REALITY</div>
-                            <div class="projCount">+2 Projects</div>
-                        </section>
-                        <section class="hoverImgSection">
-                            <img class="hoverImg" src="assets/VR/SmallScale/GeneratorRoom.png">
-                            <img class="hoverImg" src="assets/VR/SmallScale/Cooking_1.png">
-                        </section>
-                    </section>
-                    <section class="bottomType">
-                        <svg width="100%" height="1px">
-                            <rect width="100%" height="100%" style="fill:rgb(255,255,255);"></rect>
-                        </svg>
-                    </section>
-                    <section class="projects">
-                        <section class="project">
-                            <section class="projectTop">
-                                <div class="projectTitle">STATION SIX</div>
-                                <section class="apps">
-                                    <img class="appIcon" src="assets/Icons/Unity_Icon.png">
-                                    <img class="appIcon" src="assets/Icons/VisualStudio_Icon.png">
-                                    <img class="appIcon" src="assets/Icons/Maya_Icon.png">
-                                    <img class="appIcon" src="assets/Icons/Ps_Icon.png">
+                <section id="slider">
+                    <section id="gallery">
+
+                        <section id="messanger" class="web" onmousedown="loadProj(this)">
+                            <section class="img">
+                                <img class="projImg" src="assets/UI/FullScale/Dark.png" width="1920px" height="1080px">
+                                <section class="projName">
+                                    messanger concept
+                                    <section class="projTitle" width="100px">
+                                        <svg width="100px" height="2" class="rectangles">
+                                          <rect width="100%" height="100%" rx="2" ry="2" style="fill:rgb(255, 162, 0)" />
+                                        </svg>
+                                        <div>ui design</div>
+                                    </section>
                                 </section>
                             </section>
-                            <section class="projectMiddle">
-                                <div class="projectDescription">Station Six was a group project that was the capstone project for my University program. We decided to build a VR mystery puzzle game based in space for the Oculus Rift. My role on the project was Lead Developer. Some notable features I implemented was the IK system, Pulse Cannon and Sonar.</div> 
-                                <div class="appDescription"><b>UNITY |</b> Particles, Materials, Level Design, Oculus Rift Dev<br><b>VISUAL STUDIO |</b> C#<br><b>MAYA |</b> Modelling<br><b>PHOTOSHOP |</b> Marketing Assets, Project Materials</div>   
-                            </section>
-                            <section class="projectBottom">
-                                <img onmousedown="loadImage(this)" class="projectImg" src="assets/VR/SmallScale/GeneratorRoom.png">
-                                <img onmousedown="loadImage(this)" class="projectImg" src="assets/VR/SmallScale/Bot.png">
-                                <img onmousedown="loadImage(this)" class="projectImg" src="assets/VR/SmallScale/Minerva.png">
-                                <img onmousedown="loadImage(this)" class="projectImg" src="assets/VR/SmallScale/Lab.png">
-                                <img onmousedown="loadImage(this)" class="projectImg" src="assets/VR/SmallScale/LabRender.png">
-                                <img onmousedown="loadImage(this)" class="projectImg" src="assets/VR/SmallScale/Storage.png">
-                                <video controls>
-                                    <source src="assets/VR/StationSixHighlights.mp4">
-                                </video>
-                            </section>
                         </section>
-                        <section class="project">
-                            <section class="projectTop">
-                                <div class="projectTitle">COOKING CHAOS</div>
-                                <section class="apps">
-                                    <img class="appIcon" src="assets/Icons/Bracket_Icon.png">
+
+                        <section id="music" class="mobile" onmousedown="loadProj(this)">
+                            <section class="img">
+                                <img class="projImg" src="assets/UI/FullScale/PlayerDark.png" width="1920px" height="1080px">
+                                <section class="projName" >
+                                    music player<br>concept
+                                    <section class="projTitle" width="100px">
+                                        <svg width="100px" height="2" class="rectangles">
+                                          <rect width="100%" height="100%" rx="2" ry="2" style="fill:rgb(255, 162, 0)" />
+                                        </svg>
+                                        <div>ui design</div>
+                                    </section>
                                 </section>
                             </section>
-                            <section class="projectMiddle">
-                                <div class="projectDescription">Over the course of 4 months I worked on a web-based VR game for the Oculus Rift as the Lead Developer in a group project. The game centered around one player who is not in VR reading a recipe to the other player who is in VR cooking based on the recipe being read to them. Some notable features that I implemented were the cutting, cooking progression and heat transfer.</div> 
-                                <div id="xd" class="appDescription"><b>BRACKETS |</b> VR Oculus Rift Game Development, HTML, CSS, JavaScript, A-Frame</div>   
-                            </section>
-                            <section class="projectBottom">
-                                <img onmousedown="loadImage(this)" class="projectImg" src="assets/VR/SmallScale/Cooking_1.png">
-                                <img onmousedown="loadImage(this)" class="projectImg" src="assets/VR/SmallScale/Cooking_2.png">
-                                <video controls>
-                                    <source src="assets/VR/CookingChaos.mp4">
-                                </video>
-                            </section>
                         </section>
-                    </section>
-                </section>
-                <section class="type" >
-                    <section class="topType">
-                        <section class="typeInfo" onmouseout="unHighlight(this)" onmouseover="highlight(this)" onmousedown="sendProject(this)">
-                            <div class="title">GAMES</div>
-                            <div class="projCount">+2 Projects</div>
-                        </section>
-                        <section class="hoverImgSection">
-                            <img class="hoverImg" src="assets/Games/SmallScale/Mail_1.png">
-                            <img class="hoverImg" src="assets/Games/SmallScale/IMD_1.png">
-                        </section>
-                    </section>
-                    <section class="bottomType">
-                        <svg width="100%" height="1px">
-                            <rect width="100%" height="100%" style="fill:rgb(255,255,255);"></rect>
-                        </svg>
-                    </section>
-                    <section class="projects">
-                        <section class="project">
-                            <section class="projectTop">
-                                <div class="projectTitle">MAIL CHASE</div>
-                                <section class="apps">
-                                    <img class="appIcon" src="assets/Icons/Unity_Icon.png">
-                                    <img class="appIcon" src="assets/Icons/VisualStudio_Icon.png">
+
+
+                        <section id="station" class="web">
+                            <section class="img">
+                                <img class="projImg" src="assets/VR/FullScale/LabRender.png" width="1920px" height="1080px">
+                                <section class="projName" >
+                                    station six<br>
+                                    <section class="projTitle" width="100px">
+                                        <svg width="100px" height="2" class="rectangles">
+                                          <rect width="100%" height="100%" rx="2" ry="2" style="fill:rgb(255, 162, 0)" />
+                                        </svg>
+                                        <div>game design</div>
+                                    </section>
                                 </section>
                             </section>
-                            <section class="projectMiddle">
-                                <div class="projectDescription">This is a 3D single player Desktop game made in Unity. My role during development was Lead Developer. The main purpose to the game was to catch up to the mail truck by leashing onto dogs and using them to propel the player forwards. Some notable features that I implemented are the day/night cycle and the movement.</div> 
-                                <div id="unity" class="appDescription"><b>UNITY |</b> 3D Game Development, UI Implementation<br><b>VISUAL STUDIO |</b> C#</div>   
-                            </section>
-                            <section class="projectBottom">
-                                <img onmousedown="loadImage(this)" class="projectImg" src="assets/Games/SmallScale/Mail_1.png">
-                                <img onmousedown="loadImage(this)" class="projectImg" src="assets/Games/SmallScale/Mail_2.png">
-                                <video controls>
-                                    <source src="assets/Games/MailChaseGameplay.mp4">
-                                </video>
-                            </section>
                         </section>
-                        <section class="project">
-                            <section class="projectTop">
-                                <div class="projectTitle">IMD DASH</div>
-                                <section class="apps">
-                                    <img class="appIcon" src="assets/Icons/Unity_Icon.png">
-                                    <img class="appIcon" src="assets/Icons/VisualStudio_Icon.png">
+
+                    </section>
+                    <section id="projectDescriptions">
+
+                        <section class="projWindow">
+                            <section class="projHeader">
+                                <section class="back" onclick="back()">
+                                    <img id="backBtn" src="assets/Icons/back.png">
+                                </section>
+                                <section class="projHeaderText">
+                                    <div class="projHeaderTitle">Messanger Concept</div>
+                                    <svg width="100px" height="2" class="rectangles">
+                                      <rect width="100%" height="100%" rx="2" ry="2" style="fill:rgb(255, 162, 0)" />
+                                    </svg>
+                                    <div class="projHeaderDesc">wireframes | prototypes | adobe xd</div>
                                 </section>
                             </section>
-                            <section class="projectMiddle">
-                                <div class="projectDescription">This is a 2D multiplayer desktop game made in Unity. My role during development was Lead Developer. One player plays as the student who is trying to graduate by dodging assignments. The other player is answering e-mails as the professor and placing assignments in the way of the student. Some notable features that I implemented are the player input and scoring.</div> 
-                                <div id="unity" class="appDescription"><b>UNITY |</b> 2D Game Development, UI Implmentation<br><b>VISUAL STUDIO |</b> C#</div>   
-                            </section>
-                            <section class="projectBottom">
-                                <img onmousedown="loadImage(this)" class="projectImg" src="assets/Games/SmallScale/IMD_1.png">
-                                <img onmousedown="loadImage(this)" class="projectImg" src="assets/Games/SmallScale/IMD_2.png">
-                            </section>
-                        </section>
-                    </section>
-                </section>
-                <section class="type" >
-                    <section class="topType">
-                        <section class="typeInfo" onmouseout="unHighlight(this)" onmouseover="highlight(this)" onmousedown="sendProject(this)">
-                            <div class="title">3D MODELLING</div>
-                            <div class="projCount">+2 Projects</div>
-                        </section>
-                        <section class="hoverImgSection">
-                            <img class="hoverImg" src="assets/3D/SmallScale/Lego_4.png">
-                            <img class="hoverImg" src="assets/3D/SmallScale/WoodyRender.png">
-                        </section>
-                    </section>
-                    <section class="bottomType">
-                        <svg width="100%" height="1px">
-                            <rect width="100%" height="100%" style="fill:rgb(255,255,255);"></rect>
-                        </svg>
-                    </section>
-                    <section class="projects">
-                        <section class="project">
-                            <section class="projectTop">
-                                <div class="projectTitle">LEGO GENERATOR</div>
-                                <section class="apps">
-                                    <img class="appIcon" src="assets/Icons/Maya_Icon.png">
+                            <section class="projGal">
+                                <section id="galNum">
+                                    <img id="img1" class="projGalImg" src="assets/UI/FullScale/Dark.png">
+                                </section>
+                                <section class="projGalSlide">
+                                    <div id="slideNum">
+                                        <span id="1" class="dot" onclick="changeSlide(this)"></span>
+                                    </div>
                                 </section>
                             </section>
-                            <section class="projectMiddle">
-                                <div class="projectDescription">Using the Python script editor in Maya I created a procedural Lego piece generator. The interface allows you to select different Lego pieces and change attributes like height, width and depth.</div> 
-                                <div id="unity" class="appDescription"><b>MAYA |</b> Python, Modelling, Rendering</div>   
-                            </section>
-                            <section class="projectBottom">
-                                <img onmousedown="loadImage(this)" class="projectImg" src="assets/3D/SmallScale/Lego_1.png">
-                                <img onmousedown="loadImage(this)" class="projectImg" src="assets/3D/SmallScale/Lego_2.png">
-                                <img onmousedown="loadImage(this)" class="projectImg" src="assets/3D/SmallScale/Lego_3.png">
-                                <img onmousedown="loadImage(this)" class="projectImg" src="assets/3D/SmallScale/Lego_4.png">
-                            </section>
                         </section>
-                        <section class="project">
-                            <section class="projectTop">
-                                <div class="projectTitle">WOODY</div>
-                                <section class="apps">
-                                    <img class="appIcon" src="assets/Icons/Maya_Icon.png">
-                                    <img class="appIcon" src="assets/Icons/Ps_Icon.png">
-                                    <img class="appIcon" src="assets/Icons/Sculptris_Icon.png">
-                                </section>
-                            </section>
-                            <section class="projectMiddle">
-                                <div class="projectDescription">This is a 2D multiplayer desktop game made in Unity. My role during development was Lead Developer. One player plays as the student who is trying to graduate by dodging assignments. The other player is answering e-mails as the professor and placing assignments in the way of the student. Some notable features that I implemented are the player input and scoring.</div> 
-                                <div id="unity" class="appDescription"><b>MAYA |</b> 3D Modelling, UV Unwrapping, Rendering, Rigging<br><b>PHOTOSHOP |</b> Texture Maps<br><b>SCULPTRIS |</b> Sculpting</div>   
-                            </section>
-                            <section class="projectBottom">
-                                <img onmousedown="loadImage(this)" class="projectImg" src="assets/3D/SmallScale/WoodyPose.png">
-                                <img onmousedown="loadImage(this)" class="projectImg" src="assets/3D/SmallScale/WoodyRig.png">
-                                <img onmousedown="loadImage(this)" class="projectImg" src="assets/3D/SmallScale/WoodyRender.png">
-                                <img onmousedown="loadImage(this)" class="projectImg" src="assets/3D/SmallScale/WoodyTexture.png">
-                            </section>
-                        </section>
+                        
                     </section>
-                </section>
-                <section class="type" >
-                    <section class="topType">
-                        <section class="typeInfo" onmouseout="unHighlight(this)" onmouseover="highlight(this)" onmousedown="sendProject(this)">
-                            <div class="title">PHOTOS</div>
-                            <div class="projCount">+2 Projects</div>
-                        </section>
-                        <section class="hoverImgSection">
-                            <img class="hoverImg" src="assets/Photos/SmallScale/Hockey.png">
-                            <img class="hoverImg" src="assets/Photos/SmallScale/StationSix.png">
-                        </section>
-                    </section>
-                    <section class="bottomType">
-                        <svg width="100%" height="1px">
-                            <rect width="100%" height="100%" style="fill:rgb(255,255,255);"></rect>
-                        </svg>
-                    </section>
-                    <section class="projects">
-                        <section class="project">
-                            <section class="projectTop">
-                                <div class="projectTitle">POSTERS</div>
-                                <section class="apps">
-                                    <img class="appIcon" src="assets/Icons/Ps_Icon.png">
-                                </section>
-                            </section>
-                            <section class="projectMiddle">
-                                <div class="projectDescription">The "Station Six" poster was made in conjunction with the game for a fair. The "Tanika Charles" was made for a friend's work where the artist was performing.</div> 
-                                <div class="appDescription"><b>PHOTOSHOP |</b> Marketing Assets, Project Materials</div>   
-                            </section>
-                            <section class="projectBottom">
-                                <img onmousedown="loadImage(this)" class="projectImg" src="assets/Photos/SmallScale/TanikaCharles.png">
-                                <img onmousedown="loadImage(this)" class="projectImg" src="assets/Photos/SmallScale/StationSix.png">
-                            </section>
-                        </section>
-                        <section class="project">
-                            <section class="projectTop">
-                                <div class="projectTitle">PHOTOS</div>
-                                <section class="apps">
-                                    <img class="appIcon" src="assets/Icons/Ps_Icon.png">
-                                </section>
-                            </section>
-                            <section class="projectMiddle">
-                                <div class="projectDescription">These are a collection of photographs taken over several years.</div> 
-                                <div id="unity" class="appDescription"><b>PHOTOSHOP |</b> Photo Editing</div>   
-                            </section>
-                            <section class="projectBottom">
-                                <img onmousedown="loadImage(this)" class="projectImg" src="assets/Photos/SmallScale/BlueFlower.png">
-                                <img onmousedown="loadImage(this)" class="projectImg" src="assets/Photos/SmallScale/Conversation.png">
-                                <img onmousedown="loadImage(this)" class="projectImg" src="assets/Photos/SmallScale/Dinner.png">
-                                <img onmousedown="loadImage(this)" class="projectImg" src="assets/Photos/SmallScale/Fountain.png">
-                                <img onmousedown="loadImage(this)" class="projectImg" src="assets/Photos/SmallScale/HandOfGod.png">
-                                <img onmousedown="loadImage(this)" class="projectImg" src="assets/Photos/SmallScale/Hockey.png">
-                                <img onmousedown="loadImage(this)" class="projectImg" src="assets/Photos/SmallScale/InATree.png">
-                                <img onmousedown="loadImage(this)" class="projectImg" src="assets/Photos/SmallScale/Portrait.png">
-                                <img onmousedown="loadImage(this)" class="projectImg" src="assets/Photos/SmallScale/PurpleFlower.png">
-                                <img onmousedown="loadImage(this)" class="projectImg" src="assets/Photos/SmallScale/Scale.png">
-                                <img onmousedown="loadImage(this)" class="projectImg" src="assets/Photos/SmallScale/Sparks.png">
-                                <img onmousedown="loadImage(this)" class="projectImg" src="assets/Photos/SmallScale/Toronto.png">
-                                <img onmousedown="loadImage(this)" class="projectImg" src="assets/Photos/SmallScale/Tunnel.png">
-                                <img onmousedown="loadImage(this)" class="projectImg" src="assets/Photos/SmallScale/Walking.png">
-                                <img onmousedown="loadImage(this)" class="projectImg" src="assets/Photos/SmallScale/Windmill.png">
-                            </section>
-                        </section>
-                    </section>
+                    
                 </section>
             </section>
-            <section id="imageExpand" onmousedown="closeImage()">
-            </section>
+                
+            
         </section>
     </body>
 </html>
