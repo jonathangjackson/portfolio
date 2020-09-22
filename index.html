@@ -11,8 +11,12 @@
     <body onload="run()" onresize="run()">
         <section id="wrapper">
             <section id="head">
-                <div id="logo"><img src="assets/Icons/JJ.svg" id="banner"></div>
-                <nav id="nav"><a >about</a>  |  <a>projects</a>  |  <a>resume</a>  |  <a>contact</a></nav>
+                <div id="logo"><img src="assets/Icons/JJ.svg" id="banner" onmousedown="scrollToTop()"></div>
+                <section id="nav">
+                    <div class="navBtn" onmousedown="scrollToEle(this)" id="section_about">about</div>  |  
+                    <div class="navBtn" onmousedown="scrollToEle(this)" id="section_projects">projects</div>  |  
+                    <div class="navBtn">contact</div>
+                </section>
             </section>
             <section id="about">
                     <img id="portrait" src="assets/Icons/Portrait.png">

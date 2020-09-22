@@ -18,19 +18,30 @@
 }
 
 #banner{
+    position: fixed;
+    cursor: pointer;
     float: left;
     width: 5.21vw; 
     margin-left: 2.08vw;
 }
 
 #nav{
+    flex-direction: row;
     float: left;
     font-family: montMed;
+    font-weight: 100;
     font-size: 1.04vw;
     letter-spacing: 0.15em;
     margin-top: 8.1vw;
-    margin-left: 1.04vw;
+    margin-left: 7.6vw;
     color: #E8E8E8;
+}
+
+.navBtn{
+    z-index: 10;
+    cursor: pointer;
+    margin-left: 0.52vw;
+    margin-right: 0.52vw;
 }
 
 #about{

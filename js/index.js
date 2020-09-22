@@ -36,6 +36,29 @@ function run(){
     gallery();
 }
 
+function scrollToTop(){
+    document.body.scrollTop = 0; 
+    document.documentElement.scrollTop = 0; 
+    var navEle = document.getElementsByClassName("navBtn");
+    for(var i = 0; i < navEle.length; i++){
+        navEle[i].style.color = "white";
+        navEle[i].style.fontWeight = "100";
+    }
+    navEle[0].style.color = "rgb(255,162,0, 1)";
+    navEle[0].style.fontWeight = "bold";
+}
+
+function scrollToEle(ele){
+    var navEle = document.getElementsByClassName("navBtn");
+    for(var i = 0; i < navEle.length; i++){
+        navEle[i].style.color = "white";
+        navEle[i].style.fontWeight = "100";
+    }
+    ele.style.color = "rgb(255,162,0, 1)";
+    ele.style.fontWeight = "bold";
+    document.getElementById(ele.innerHTML).scrollIntoView();
+}
+
 function gallery(){
     var galleryWidth = window.getComputedStyle(document.getElementById("gallery")).width;
     var mobile = document.getElementsByClassName("mobile");
@@ -127,7 +150,6 @@ function populateDescription(id){
             slideCount.removeChild(slideCount.childNodes[slideCount.childNodes.length - 1]);
         }
     }
-    console.log(slideCount.childNodes.length - 2);
     
     /*Add Content*/
     var x = 0;
@@ -161,7 +183,6 @@ function populateDescription(id){
 
 function changeSlide(ele){
     if(oldSlide === null){
-        console.log("ERROR");
         oldSlide = ele;
     }
     else{
