@@ -240,3 +240,21 @@ function back(){
         }
     }
 }
+
+var images = new Array();
+function preload() {
+    for (i = 0; i < preload.arguments.length; i++) {
+        images[i] = new Image();
+        images[i].src = preload.arguments[i];
+    }
+}
+preload(
+    "assets/VR/FullScale/GeneratorRoom.png", 
+    "assets/VR/FullScale/LabRender.png", 
+    "assets/VR/FullScale/Storage.png", 
+    "assets/VR/FullScale/Minerva.png",
+    "assets/UI/FullScale/SongsDark.png", 
+    "assets/UI/FullScale/PlayerDark.png",
+    "assets/UI/FullScale/Dark.png", 
+    "assets/UI/FullScale/Light.png"    
+);
