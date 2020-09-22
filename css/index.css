@@ -1,5 +1,8 @@
 @charset "utf-8";
-
+:root{
+    --highlight-color: #A1FFFF;/*#FFA200*/
+    
+}
 
 @font-face{
     font-family: montSemiBold;
@@ -65,7 +68,7 @@
 
 b{
     font-family: montReg;
-    color: #FFA200;
+    color: var(--highlight-color);
 }
 
 button{
@@ -98,7 +101,7 @@ button{
 }
 
 #title{
-    color: #FFA200;
+    color: var(--highlight-color);
 }
 
 #selected{

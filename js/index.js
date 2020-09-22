@@ -26,6 +26,7 @@ var station = {
 /*projects*/
 var projects = [messanger, music, station];
 
+var highlightColor = "rgba(161,255,255, 1)";//rgba(255,162,0, 1)
 
 function run(){
     var x = document.getElementsByClassName("rectangles");
@@ -44,7 +45,7 @@ function scrollToTop(){
         navEle[i].style.color = "white";
         navEle[i].style.fontWeight = "100";
     }
-    navEle[0].style.color = "rgb(255,162,0, 1)";
+    navEle[0].style.color = highlightColor;
     navEle[0].style.fontWeight = "bold";
 }
 
@@ -54,7 +55,7 @@ function scrollToEle(ele){
         navEle[i].style.color = "white";
         navEle[i].style.fontWeight = "100";
     }
-    ele.style.color = "rgb(255,162,0, 1)";
+    ele.style.color = highlightColor;
     ele.style.fontWeight = "bold";
     document.getElementById(ele.innerHTML).scrollIntoView();
 }
@@ -127,7 +128,7 @@ function loadProj(ele){
     gallery.style.display = "none";
     
     oldSlide = document.getElementById("1");
-    oldSlide.style.backgroundColor= "rgba(255,162,0, 1)";
+    oldSlide.style.backgroundColor= highlightColor;
     document.getElementById("img1").style.display = "flex";
 }
 
@@ -194,7 +195,7 @@ function changeSlide(ele){
         oldSlide = ele;
         document.getElementById("img" + oldSlide.id).style.display = "flex";
     }
-    ele.style.backgroundColor= "rgba(255,162,0, 1)";
+    ele.style.backgroundColor= highlightColor;
 }
 
 function back(){
@@ -218,7 +219,7 @@ function back(){
     gallery.style.display = "flex";
     
     oldSlide = document.getElementById("1");
-    oldSlide.style.backgroundColor= "rgba(255,162,0, 0)";
+    oldSlide.style.backgroundColor= "rgba(161,255,255, 0)";
     document.getElementById("img1").style.display = "none";
     
     /*Erase Current Content*/
@@ -256,5 +257,6 @@ preload(
     "assets/UI/FullScale/SongsDark.png", 
     "assets/UI/FullScale/PlayerDark.png",
     "assets/UI/FullScale/Dark.png", 
-    "assets/UI/FullScale/Light.png"    
+    "assets/UI/FullScale/Light.png",
+    "assets/Icons/Portrait.png"
 );

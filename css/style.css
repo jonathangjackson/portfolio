@@ -53,11 +53,11 @@ a:hover{
 }
 
 a:visited{
-    color: #FFA200;
+    color: var(--highlight-color);
 }
 
 a:active{
-    color: #FFA200;
+    color: var(--highlight-color);
     outline: none;
     background: none;
 }
