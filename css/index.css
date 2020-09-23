@@ -298,6 +298,7 @@ button{
 }
 
 #footer{
+    position: static;
     justify-content: center;
     text-align: center;
     color: rgb(255,255,255,0.6);
@@ -311,6 +312,8 @@ button{
     body {
         width: 1840px;
         margin: auto;
+        background-repeat: no-repeat;
+        background-size: cover;
     }
     
     #banner{
@@ -385,10 +388,12 @@ button{
     
     .projGal{
         max-width: 1400px;
+        
     }
     
     .projGalImg{
         max-width: 1400px;
+        max-height: 1080px;
     }
 
     .projGalSlide{

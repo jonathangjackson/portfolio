@@ -37,6 +37,7 @@ function run(){
         x[i].style.width = y;
     }
     gallery();
+    document.getElementsByClassName("projWindow")[0].style.height = window.getComputedStyle(document.getElementById("gallery")).height;
 }
 
 function scrollToTop(){
