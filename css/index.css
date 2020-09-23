@@ -273,6 +273,7 @@ button{
 
 .projGalSlide{
     justify-content:center;
+    margin-top: 1.04vw;
 }
 
 .dot{
@@ -295,6 +296,17 @@ button{
     background-color: rgba(255,162,0, 1);
     transition: background-color 0.6s ease;
 }
+
+#footer{
+    justify-content: center;
+    text-align: center;
+    color: rgb(255,255,255,0.6);
+    font-family: montReg;
+    font-size: 1.04vw;
+    letter-spacing: 0.14vw;
+    margin-top: 2.8vw;
+    margin-bottom: 0.5vw;
+}
 @media only screen and (min-width: 1920px) {
     body {
         width: 1840px;
@@ -314,7 +326,7 @@ button{
         letter-spacing: auto;
         margin-top: 156px;
         color: #E8E8E8;
-        margin-left: 20px;
+        margin-left: 110px;
     }
     
     #about{
@@ -360,5 +372,26 @@ button{
     #gallery{
         width: 1400px;
         margin-left: 120px;
+    }
+    
+    .projWindow{
+        margin-left: 120px;
+    }
+    
+    #projectDescriptions{
+        width: 1400px;
+        margin-left: 120px;
+    }
+    
+    .projGal{
+        max-width: 1400px;
+    }
+    
+    .projGalImg{
+        max-width: 1400px;
+    }
+
+    .projGalSlide{
+        margin-top: 20px;
     }
 }

@@ -192,7 +192,7 @@ function changeSlide(ele){
         if(oldSlide === ele){
             return;
         }
-        oldSlide.style.backgroundColor = "rgb(255, 255, 255)";
+        oldSlide.style.backgroundColor = "rgba(255, 255, 255, 0.6)";
         document.getElementById("img" + oldSlide.id).style.display = "none";
         oldSlide = ele;
         document.getElementById("img" + oldSlide.id).style.display = "flex";
