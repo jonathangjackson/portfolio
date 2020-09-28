@@ -8,7 +8,7 @@
         <script src="js/index.js"></script>
         <title>Jonathan Jackson | Portfolio</title>
     </head>
-    <body onload="run()" onresize="run()">
+    <body id="body" onload="run()" onresize="run()">
         <section id="wrapper">
             <section id="head">
                 <div id="logo"><img src="assets/Icons/JJ.svg" id="banner" onmousedown="scrollToTop()"></div>
@@ -29,43 +29,57 @@
                         <div id="title">projects</div> 
                         <section id="filterSection">
                             <div id="selected">/general</div>
-                            <section id="filters"><button onmousedown="filter(this)">/ui_ux</button><button onmousedown="filter(this)">/game_design</button><button onmousedown="filter(this)">/photography</button></section>
+                            <section id="filters"><button onmousedown="filter(this)">/ui_ux</button><button onmousedown="filter(this)">/game_design</button><button onmousedown="filter(this)">/graphic_design</button></section>
                         </section>
                     </section>
                 </section>
                 <section id="slider">
                     <section id="gallery">
 
-                        <section id="messanger" class="web" onmousedown="loadProj(this)">
+                        <section id="adobe" class="web" onmousedown="loadProj(this)">
                             <section class="img">
                                 <img class="projImg" src="assets/UI/FullScale/Dark.png" width="1920px" height="1080px">
                                 <section class="projName">
-                                    messanger concept
+                                    adobe xd daily designs
                                     <section class="projTitle" width="100px">
                                         <svg width="100px" height="2" class="rectangles">
                                           <rect width="100%" height="100%" rx="2" ry="2" style="fill:rgb(161, 255, 255)" />
                                         </svg>
-                                        <div>ui design</div>
+                                        <div>ui/ux design</div>
                                     </section>
                                 </section>
                             </section>
                         </section>
 
-                        <section id="music" class="mobile" onmousedown="loadProj(this)">
+                        <section id="drawing" class="mobile" onmousedown="loadProj(this)">
                             <section class="img">
-                                <img class="projImg" src="assets/UI/FullScale/PlayerDark.png" width="1920px" height="1080px">
+                                <img class="projImg" src="assets/UI/FullScale/DrawingUI_1.png" width="1920px" height="1080px">
                                 <section class="projName" >
-                                    music player<br>concept
+                                    drawing<br>android app
                                     <section class="projTitle" width="100px">
                                         <svg width="100px" height="2" class="rectangles">
                                           <rect width="100%" height="100%" rx="2" ry="2" style="fill:rgb(161, 255, 255)" />
                                         </svg>
-                                        <div>ui design</div>
+                                        <div>ui/ux design</div>
                                     </section>
                                 </section>
                             </section>
                         </section>
 
+                        <section id="august" class="web" onmousedown="loadProj(this)">
+                            <section class="img">
+                                <img class="projImg" src="assets/UI/FullScale/ProductPage.png" width="1920px" height="1080px">
+                                <section class="projName" >
+                                    august mcgregor concept
+                                    <section class="projTitle" width="100px">
+                                        <svg width="100px" height="2" class="rectangles">
+                                          <rect width="100%" height="100%" rx="2" ry="2" style="fill:rgb(161, 255, 255)" />
+                                        </svg>
+                                        <div>ui/ux design</div>
+                                    </section>
+                                </section>
+                            </section>
+                        </section>
 
                         <section id="station" class="web" onmousedown="loadProj(this)">
                             <section class="img">
@@ -100,7 +114,7 @@
                             </section>
                             <section class="projGal">
                                 <section id="galNum">
-                                    <img id="img1" class="projGalImg" src="assets/UI/FullScale/Dark.png">
+                                    <img onmousedown="expand(this)" id="img1" class="projGalImg" src="assets/UI/FullScale/Dark.png">
                                 </section>
                                 <section class="projGalSlide">
                                     <div id="slideNum">
@@ -118,6 +132,17 @@
             
         </section>
     </body>
+    <div id="myModal" class="modal">
+
+      <!-- The Close Button -->
+      <span class="close" onmousedown="closeModal(this)">&times;</span>
+
+      <!-- Modal Content (The Image) -->
+      <img class="modal-content" id="img01" src="assets/UI/FullScale/CalcUI_1.png">
+
+      <!-- Modal Caption (Image Text) -->
+      <div id="caption"></div>
+    </div>
     <footer>
         <div id="footer">©Jonathan Jackson 2020</div>
     </footer>

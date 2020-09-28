@@ -1,18 +1,18 @@
 /*Project Structure*/
-var messanger = {
-    id: "messanger",
-    name: "Messanger Concept",
+var adobe = {
+    id: "adobe",
+    name: "Adobe XD Daily Designs",
     description: "wireframes  |  prototypes  |  adobe xd",
     type: "ui_ux",
-    images: ["assets/UI/FullScale/Dark.png", "assets/UI/FullScale/Light.png"]
+    images: ["assets/UI/FullScale/Dark.png", "assets/UI/FullScale/Light.png", "assets/UI/FullScale/Shoe_1.png", "assets/UI/FullScale/Shoe_2.png","assets/UI/FullScale/SongsDark.png", "assets/UI/FullScale/PlayerDark.png"]
 };
 
-var music = {
-    id: "music",
-    name: "Music Player Concept",
-    description: "wireframes  |  prototypes  |  adobe xd",
+var drawing = {
+    id: "drawing",
+    name: "Drawing Android App",
+    description: "wireframes  |  prototypes  |  android studio",
     type: "ui_ux",
-    images: ["assets/UI/FullScale/SongsDark.png", "assets/UI/FullScale/PlayerDark.png"]
+    images: ["assets/UI/FullScale/DrawingUI_1.png", "assets/UI/FullScale/DrawingUI_2.png"]
 };
 
 var station = {
@@ -23,10 +23,18 @@ var station = {
     images: ["assets/VR/FullScale/GeneratorRoom.png", "assets/VR/FullScale/LabRender.png", "assets/VR/FullScale/Storage.png", "assets/VR/FullScale/Minerva.png"]
 };
 
-/*projects*/
-var projects = [messanger, music, station];
+var august = {
+    id: "august",
+    name: "August McGregor Concept",
+    description: "wireframes  |  prototypes  |  adobe xd",
+    type: "ui_ux",
+    images: ["assets/UI/FullScale/LandingPage.png", "assets/UI/FullScale/Wireframe_1.png", "assets/UI/FullScale/Wireframe_2.png", "assets/UI/FullScale/ProductPage.png"]
+};
 
-var highlightColor = "rgba(161,255,255, 1)";//rgba(255,162,0, 1)
+/*projects*/
+var projects = [adobe, drawing, station, august];
+
+var highlightColor = "#C9EDFF";//rgba(255,162,0, 1)
 
 function run(){
     document.getElementById("section_about").style.color = highlightColor;
@@ -222,7 +230,7 @@ function back(){
     gallery.style.display = "flex";
     
     oldSlide = document.getElementById("1");
-    oldSlide.style.backgroundColor= "rgba(161,255,255, 0)";
+    oldSlide.style.backgroundColor= "rgba(201,237,255, 0)";
     document.getElementById("img1").style.display = "none";
     
     /*Erase Current Content*/
@@ -246,12 +254,7 @@ function back(){
 }
 
 var images = new Array();
-function preload() {
-    for (i = 0; i < preload.arguments.length; i++) {
-        images[i] = new Image();
-        images[i].src = preload.arguments[i];
-    }
-}
+
 preload(
     "assets/VR/FullScale/GeneratorRoom.png", 
     "assets/VR/FullScale/LabRender.png", 
@@ -263,3 +266,33 @@ preload(
     "assets/UI/FullScale/Light.png",
     "assets/Icons/Portrait.png"
 );
+function preload() {
+    for (i = 0; i < preload.arguments.length; i++) {
+        images[i] = new Image();
+        images[i].src = preload.arguments[i];
+    }
+}
+
+// Get the modal
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+function expand(ele){
+    var body = document.getElementById("body");
+    body.style.overflow = "hidden";
+    var modal = document.getElementById("myModal");
+    var modalImg = document.getElementById("img01");
+    console.log(modal);
+    modal.style.display = "block";
+    console.log(ele.src);
+    modalImg.src = ele.src;
+}
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on <span> (x), close the modal
+function closeModal(ele) {
+    var body = document.getElementById("body");
+    body.style.overflow = "scroll";
+    var modal = document.getElementById("myModal");
+    modal.style.display = "none";
+}
