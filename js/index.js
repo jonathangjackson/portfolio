@@ -264,6 +264,11 @@ preload(
     "assets/UI/FullScale/PlayerDark.png",
     "assets/UI/FullScale/Dark.png", 
     "assets/UI/FullScale/Light.png",
+    "assets/Icons/Portrait.png", 
+    "assets/UI/FullScale/LandingPage.png", 
+    "assets/UI/FullScale/Wireframe_1.png", 
+    "assets/UI/FullScale/Wireframe_2.png", 
+    "assets/UI/FullScale/ProductPage.png", 
     "assets/Icons/Portrait.png"
 );
 function preload() {
