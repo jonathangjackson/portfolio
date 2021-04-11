@@ -1,10 +1,10 @@
 /*Project Structure*/
-var adobe = {
-    id: "adobe",
-    name: "Adobe XD Daily Designs",
-    description: "wireframes  |  prototypes  |  adobe xd",
+var daily = {
+    id: "daily",
+    name: "Daily Designs",
+    description: "wireframes  |  prototypes  |  mockups",
     type: "ui_ux",
-    images: ["assets/UI/FullScale/Dark.png", "assets/UI/FullScale/Light.png", "assets/UI/FullScale/Shoe_1.png", "assets/UI/FullScale/Shoe_2.png","assets/UI/FullScale/SongsDark.png", "assets/UI/FullScale/PlayerDark.png"]
+    images: ["assets/DailyDesigns/Slide_1.png", "assets/DailyDesigns/Slide_5.png", "assets/DailyDesigns/Slide_4.png", "assets/DailyDesigns/Slide_3.png", "assets/DailyDesigns/Slide_2.png"]
 };
 
 var drawing = {
@@ -32,7 +32,7 @@ var august = {
 };
 
 /*projects*/
-var projects = [adobe, drawing, station, august];
+var projects = [daily, drawing, station, august];
 
 var highlightColor = "#C9EDFF";//rgba(255,162,0, 1)
 
